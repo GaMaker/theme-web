@@ -8,8 +8,7 @@
 
 	<div class="portfolio-listing clearfix">
 
-	<!--
-	<?php 
+	<?php
 		$args = array(
 			'cat' => $category,
 			'posts_per_page' => -1
@@ -25,7 +24,7 @@
 		<a href="<?php the_permalink(); ?>" class="portfolio-list wow fadeInUp" data-wow-delay="<?php echo $i; ?>s">
 		<div class="portfolio-overlay"><span>+</span></div>
 			<div class="portfolio-image">
-			<?php if(has_post_thumbnail()) : 
+			<?php if(has_post_thumbnail()) :
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'portfolio-thumbnail'); ?>
 				<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
 			<?php else: ?>
@@ -40,9 +39,4 @@
 			wp_reset_postdata();
 		endif;
 	?>
-	-->
-	<?php echo do_shortcode("[huge_it_portfolio id='1']"); ?>
 	</div><!-- #primary -->
-
-
-
