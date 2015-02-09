@@ -1,0 +1,51 @@
+
+====================== Changelog of Kool ======================
+Version 1.0.7
+-----------------------
+ 
+[added] Credet link to footer
+[fixed] Widget stacking problem in older IE browsers for Front Page template.
+[modified] in kool.pot file
+
+version 1.0.6
+-----------------------
+minor changes in stylesheet and read me files
+
+Version 1.0.5
+-----------------------
+[solved] URI problem
+[modified] Some codes are modified
+[added] widget.php file in inc folder(earlier embaded in function.php)
+[replaced] unmified version JS to html5.js
+
+Version 1.0.4
+-----------------------
+[changed] Featured image is now enabled in archive pages or in single post pages
+[added] noimage-k_small.png and its licence information
+[added] Information in readme.txt
+[change] Changed in menu design
+[change] Increased visibility of comment reply button
+
+Version 1.0.3
+-----------------------
+[changed] Minor change in description
+[added] Language folder
+
+Version 1.0.2
+-----------------------
+[removed] Language folder
+[changed] Modification in widget code
+[added]   Licence information of images used in screenshot  
+
+
+Version 1.0.1
+-----------------------
+[Changed] Screenshot.jpg
+[Changed] Some h1 tag to h2 tag
+[removed] hgroup tag
+
+
+Version 1.0
+-------------------------
+1st uploaded version
+
