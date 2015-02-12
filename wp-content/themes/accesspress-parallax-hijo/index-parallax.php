@@ -49,15 +49,15 @@
 					<?php 
 						switch ($layout) {
 							case 'default_template':
-								$template = "../accesspress-parallax/layouts/default";
+								$template = "layouts/default";
 								break;
 
 							case 'service_template':
-								$template = "../accesspress-parallax/layouts/service";
+								$template = "layouts/service";
 								break;
 
 							case 'team_template':
-								$template = "../accesspress-parallax/layouts/team";
+								$template = "layouts/team";
 								break;
 
 							case 'portfolio_template':
@@ -65,27 +65,27 @@
 								break;
 
 							case 'testimonial_template':
-								$template = "../accesspress-parallax/layouts/testimonial";
+								$template = "layouts/testimonial";
 								break;
 
 							case 'action_template':
-								$template = "../accesspress-parallax/layouts/action";
+								$template = "layouts/action";
 								break;
 
 							case 'blank_template':
-								$template = "../accesspress-parallax/layouts/blank";
+								$template = "layouts/blank";
 								break;
 
 							case 'googlemap_template':
-								$template = "../accesspress-parallax/layouts/googlemap";
+								$template = "layouts/googlemap";
 								break;
 
 							case 'blog_template':
-								$template = "../accesspress-parallax/layouts/blog";
+								$template = "layouts/blog";
 								break;
 							
 							default:
-								$template = "../accesspress-parallax/layouts/default";
+								$template = "layouts/default";
 								break;
 						}
 					?>
