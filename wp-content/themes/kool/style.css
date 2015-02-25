@@ -1,6 +1,6 @@
 /*
 Theme Name: Kool
-Version: 1.0.7
+Version: 1.0.8
 Description: Kool is a simple, clean, fully responsive, magazine/blog style wordpress theme. It easily adapts and looks great on mobile, tab, desktop or any other devices. It is easily customizable, you can customize it following the guideline stated on http://hit-hut.com/kool/blog/ It has a front page template with its own widgets and an optional full-width, no-sidebar page template, a custom post widget to display featured image on sidebar, styling for post formats on both index and single views, custom menu, header image, background and much more.
 Author: Shahin raj
 Theme URI: http://hit-hut.com/themes/
@@ -177,7 +177,7 @@ textarea {
 	font-family: inherit;
 	padding: 6px;
 	max-width: 340px;
-	padding: 0.428571429rem;
+	padding: 0.18571429rem;
 }
 button,
 input {
@@ -208,10 +208,10 @@ input[type="button"],
 input[type="reset"],
 article.post-password-required input[type=submit],
 .bypostauthor cite span {
-	padding: 6px 10px;
-	padding: 0.428571429rem 0.714285714rem;
+	/*padding: 6px 10px;
+	padding: 0.428571429rem 0.714285714rem;*/
 	font-size: 11px;
-	font-size: 1.285714286rem;
+	font-size: 1.02rem;
 	line-height: 1.428571429;
 	font-weight: bold;
 	color: #ffffff;
@@ -575,8 +575,8 @@ a:hover {
 }
 .main-navigation a {
 	color: #5e5e5e;
-	padding-left: 5px;
-	padding-right: 5px;
+	padding-left: 9px;
+	padding-right: 9px;
 	transition: all 0.3s ease 0s;
 }
 .main-navigation a:hover,
@@ -747,9 +747,10 @@ footer[role="contentinfo"] a:hover {
 .comments-link a {
     background-color: #A80000;
 	color: #ffffff;
+	display: inline-block;
 	font-weight: bold;
-	padding: 4px 9px;
-	margin: 8px;
+	padding: 0px 10px;
+	margin: 2px;
 }
 .comments-link a:hover,
 .entry-meta a:hover {
@@ -1533,9 +1534,9 @@ img#wpstats {
 	.main-navigation div.nav-menu > ul {
 	    background-color: #800000;
 		border-bottom: 1px solid #C0C0C0;
+		border-left: 1px solid;
 	    border-top: 1px solid #C0C0C0;
-        display: inline-block !important;
-		padding-left: 5px;
+		display: inline-block !important;
 		text-align: left;
         width: 100%;
 		
@@ -1547,9 +1548,7 @@ img#wpstats {
 	.main-navigation li a,
 	.main-navigation li {
 		display: inline-block;
-		text-decoration: none;
-		/*padding-left: 5px;
-		padding-right: 5px;*/
+		text-decoration: none;		
 	}
 	.main-navigation li a {
 		border-bottom: 0;
@@ -1558,7 +1557,6 @@ img#wpstats {
 		text-transform: uppercase;
 		white-space: nowrap;
 	    font-size: 140%;
-/*		font-weight: 600;*/
 		text-rendering: optimizelegibility;
 	}
 	.main-navigation li a:hover,
@@ -1567,8 +1565,8 @@ img#wpstats {
         color: #000;
 	}
 	.main-navigation li {
-		margin: 0 40px 0 0;
-		margin: 0 0.857142857rem 0 0;
+		
+		margin: 0 0 0 0;
 		position: relative;
 	}
 	.main-navigation li ul {
@@ -1620,7 +1618,6 @@ img#wpstats {
 	.main-navigation .current_page_item > a,
 	.main-navigation .current_page_ancestor > a {
 		color: #636363;
-		font-weight: bold;
 		background-color: #FFFFFF;
 		border-top-right-radius: 0px;
 		border-top-left-radius: 0px;

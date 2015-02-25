@@ -61,6 +61,9 @@ Images
     http://pixabay.com/en/wristwatch-watch-time-fashion-407096/
 
 == Changelog ==
+Version 1.12
+* Section in Theme Option page rearranged to make it more user friendly.
+
 Version 1.11
 * Screenshot Change
 * Minor CSS changes

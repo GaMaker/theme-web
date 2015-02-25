@@ -1,5 +1,9 @@
 
 ====================== Changelog of Kool ======================
+Version 1.0.8
+-----------------------
+[modified] Minor change in look of menu , leave reply button and search buttons.
+
 Version 1.0.7
 -----------------------
  

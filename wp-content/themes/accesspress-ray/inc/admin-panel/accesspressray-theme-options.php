@@ -239,7 +239,7 @@ function accesspress_ray_theme_options_page() {
 		<h3>Theme Options</h3>
 	</div>
 	<a id="options-group-1-tab" class="nav-tab nav-tab-active" href="#options-group-1"><?php _e('Basic Settings','accesspress_ray'); ?></a>
-    <a id="options-group-2-tab" class="nav-tab" href="#options-group-2"><?php _e('Home Page','accesspress_ray'); ?></a>
+    <a id="options-group-2-tab" class="nav-tab" href="#options-group-2"><?php _e('Home Page Set Up','accesspress_ray'); ?></a>
 	<a id="options-group-3-tab" class="nav-tab" href="#options-group-3"><?php _e('Slider Settings','accesspress_ray'); ?></a>
 	<a id="options-group-5-tab" class="nav-tab" href="#options-group-5"><?php _e('Social Links','accesspress_ray'); ?></a>
 	<a id="options-group-6-tab" class="nav-tab" href="#options-group-6"><?php _e('Tools','accesspress_ray'); ?></a>
@@ -345,33 +345,7 @@ function accesspress_ray_theme_options_page() {
 					</tr>
 					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
 
-					<tr><th scope="row"><label for="testimonial_cat"><?php _e('Select the category to display as Testimonials','accesspress_ray'); ?></label></th>
-					<td>
-					<select id="testimonial_cat" name="accesspress_ray_options[testimonial_cat]">
-					<?php
-					foreach ( $accesspress_ray_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="blog_cat"><?php _e('Select the category to display as Blog','accesspress_ray'); ?></label></th>
-					<td>
-					<select id="blog_cat" name="accesspress_ray_options[blog_cat]">
-					<?php
-					foreach ( $accesspress_ray_catlist as $single_cat ) :
-						$label = $single_cat['label']; ?>
-						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['blog_cat'] ); ?>><?php echo $label; ?></option>
-					<?php 
-					endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
+					
 
 					<tr><th scope="row"><label for="portfolio_cat"><?php _e('Select the category to display as Portfolio/Products','accesspress_ray'); ?></label></th>
 					<td>
@@ -417,6 +391,11 @@ function accesspress_ray_theme_options_page() {
 			<div id="options-group-2" class="group" style="display: none;">
 			<h3><?php _e('Home Page Settings','accesspress_ray'); ?></h3> 
 				<table class="form-table">
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Featured Posts', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
 					<tr>
 					<th scope="row"><label for="featured_title"><?php _e('Featured Title','accesspress_ray'); ?></label></th>
 					<td>
@@ -505,7 +484,11 @@ function accesspress_ray_theme_options_page() {
 						<td><input id="featured_post_readmore" type="text" name="accesspress_ray_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){echo esc_attr($settings['featured_post_readmore'],'accesspress_ray'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspress_ray'); ?></em></td>
 					</tr>
 
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Call To Action', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
 
 					<tr><th scope="row"><label for="call_to_action_post"><?php _e('Call To Action Post','accesspress_ray'); ?></label></th>
 					<td>
@@ -538,7 +521,11 @@ function accesspress_ray_theme_options_page() {
 						<td><input class="medium" id="call_to_action_post_readmore" type="text" name="accesspress_ray_options[call_to_action_post_readmore]" value="<?php if (isset($settings['call_to_action_post_readmore'])){ echo esc_attr($settings['call_to_action_post_readmore'],'accesspress_ray'); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspress_ray'); ?></em></td>
 					</tr>
 
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Featured Widgets', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
 
                     <tr>
 						<th><label for="featured_bar"><?php _e('Disable Featured Widget Bar','accesspress_ray'); ?></th>
@@ -548,7 +535,31 @@ function accesspress_ray_theme_options_page() {
 						</td>
 					</tr>
 
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+					<tr>
+					<td colspan="2">
+						<em class="f13"><?php echo sprintf(__('To set up Widgets, Go to <a href="%s" target="_blank">widget page</a>', 'accesspress_ray'),esc_url(admin_url('widgets.php'))); ?></em>
+					</td>
+					</tr>
+
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Blog Slider', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="blog_cat"><?php _e('Select the category to display as Blog','accesspress_ray'); ?></label></th>
+					<td>
+					<select id="blog_cat" name="accesspress_ray_options[blog_cat]">
+					<?php
+					foreach ( $accesspress_ray_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['blog_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
 
                     <tr>
 						<th><label for="show_blog_number"><?php _e('No of Posts to display in Blog slider','accesspress_ray'); ?></label></th>
@@ -563,15 +574,38 @@ function accesspress_ray_theme_options_page() {
 						</td>
 					</tr>
 
-					<tr><td colspan="2" class="seperator">&nbsp;</td></tr>
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Testimonail Slider', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
 
-					<tr><td colspan="2">
-					<?php _e('Google Map','accesspress_ray'); ?> -	
+					<tr><th scope="row"><label for="testimonial_cat"><?php _e('Select the category to display as Testimonials','accesspress_ray'); ?></label></th>
+					<td>
+					<select id="testimonial_cat" name="accesspress_ray_options[testimonial_cat]">
+					<?php
+					foreach ( $accesspress_ray_catlist as $single_cat ) :
+						$label = $single_cat['label']; ?>
+						<option value="<?php echo $single_cat['value'] ?>" <?php selected( $single_cat['value'], $settings['testimonial_cat'] ); ?>><?php echo $label; ?></option>
+					<?php 
+					endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
 
-					<?php _e(sprintf('To get Values of Latitude and Longitude by Location name, click on <a href="%s">http://www.latlong.net</a>', 'http://www.latlong.net' ),'accesspress_ray'); ?>
-					</td></tr>
+				
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Google Map', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
 
-					<tr><td class="seperator" colspan="2"></td></tr>
+					<tr>
+					<td colspan="2">
+						<em class="13"><?php _e(sprintf('To get Values of Latitude and Longitude by Location name, click on <a href="%s" target="_blank">http://www.latlong.net</a>', 'http://www.latlong.net' ),'accesspress_ray'); ?></em>
+					</td>
+					</tr>
 
 					<tr><th scope="row"><label for="latitude"><?php _e('Enter the latitude','accesspress_ray'); ?></label></th>
 						<td>
