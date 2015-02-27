@@ -1,4 +1,7 @@
 <?php
+
+include_once(dirname(__FILE__) . '/uploader.php');
+
 /**
 * Place menu icons at admin head
 **/
@@ -345,6 +348,14 @@ function wp_rp_settings_page() {
 	
 	$options = wp_rp_get_options();
 	$meta = wp_rp_get_meta();
+	
+	$articles_count = wp_rp_article_count($meta['zemanta_api_key']);
+	$articles_uploaded = false;
+	if (isset( $_GET['wp_rp_upload_articles'] ) && !empty($meta['zemanta_api_key'])) {
+		$articles_uploaded = wp_rp_upload_articles($meta['zemanta_api_key']);
+	}
+	
+	
 
 	// Update already subscribed but in the old pipeline
 	if (!empty($meta["email"]) && empty($meta["subscribed"])) {
