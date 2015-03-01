@@ -15,11 +15,11 @@
 
 	if(!empty($sections)):
 	foreach ($sections as $section) :
-		$page = get_post( $section['page'] ); 
+		$page = get_post( $section['page'] );
 		$overlay = $section['overlay'];
 		$image = $section['image'];
 		$layout = $section['layout'];
-		$category = $section['category']; 
+		$category = $section['category'];
 		$googlemapclass = $layout == "googlemap_template" ? " google-map" : "";
 	?>
 
@@ -33,7 +33,7 @@
 			<div class="mid-content">
 		<?php endif; ?>
 
-				<?php 
+				<?php
 				if($layout != "action_template" && $layout != "blank_template" && $layout != "googlemap_template"): ?>
 					<h1><span><?php echo $page->post_title; ?></span></h1>
 
@@ -43,13 +43,17 @@
 						<?php echo wpautop(do_shortcode($page->post_content)); ?>
 						</div>
 					<?php endif; ?>
-					</div> 
+					</div>
 				<?php endif; ?>
 
-					<?php 
+					<?php
 						switch ($layout) {
 							case 'default_template':
 								$template = "layouts/default";
+								break;
+
+							case 'events_template':
+								$template = "layouts/events";
 								break;
 
 							case 'service_template':
@@ -83,7 +87,7 @@
 							case 'blog_template':
 								$template = "layouts/blog";
 								break;
-							
+
 							default:
 								$template = "layouts/default";
 								break;
@@ -91,13 +95,13 @@
 					?>
 
 					<?php include($template."-section.php");?>
-        		
+
 			<?php if($layout != "googlemap_template") :?>
 			</div>
 			<?php endif; ?>
 		</section>
 	<?php
-	endif; 
+	endif;
 	endforeach;
     else:
         get_template_part('demo');

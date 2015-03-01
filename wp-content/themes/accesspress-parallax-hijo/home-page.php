@@ -4,7 +4,7 @@
  *
  * @package accesspress_parallax
  */
- 
+
 
 get_header();
 
@@ -12,11 +12,11 @@ get_header();
 
 	if(!empty($sections)):
 	foreach ($sections as $section) :
-		$page = get_post( $section['page'] ); 
+		$page = get_post( $section['page'] );
 		$overlay = $section['overlay'];
 		$image = $section['image'];
 		$layout = $section['layout'];
-		$category = $section['category']; 
+		$category = $section['category'];
 		$googlemapclass = $layout == "googlemap_template" ? " google-map" : "";
 	?>
 
@@ -30,7 +30,7 @@ get_header();
 			<div class="mid-content">
 		<?php endif; ?>
 
-				<?php 
+				<?php
 				if($layout != "action_template" && $layout != "blank_template" && $layout != "googlemap_template"): ?>
 					<h1><span><?php echo $page->post_title; ?></span></h1>
 
@@ -40,13 +40,17 @@ get_header();
 						<?php echo wpautop(do_shortcode($page->post_content)); ?>
 						</div>
 					<?php endif; ?>
-					</div> 
+					</div>
 				<?php endif; ?>
 
-					<?php 
+					<?php
 						switch ($layout) {
 							case 'default_template':
 								$template = "layouts/default";
+								break;
+
+              case 'events_template':
+								$template = "layouts/events";
 								break;
 
 							case 'service_template':
@@ -80,7 +84,7 @@ get_header();
 							case 'blog_template':
 								$template = "layouts/blog";
 								break;
-							
+
 							default:
 								$template = "layouts/default";
 								break;
@@ -88,13 +92,13 @@ get_header();
 					?>
 
 					<?php include($template."-section.php");?>
-        		
+
 			<?php if($layout != "googlemap_template") :?>
 			</div>
 			<?php endif; ?>
 		</section>
 	<?php
-	endif; 
+	endif;
 	endforeach;
 	endif;
 
