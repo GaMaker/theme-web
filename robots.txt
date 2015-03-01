@@ -5,3 +5,9 @@ Disallow: /eventos/action~oneday/
 Disallow: /eventos/action~month/
 Disallow: /eventos/action~week/
 Disallow: /eventos/action~stream/
+Disallow: /pagina-ejemplo/action~posterboard/
+Disallow: /pagina-ejemplo/action~agenda/
+Disallow: /pagina-ejemplo/action~oneday/
+Disallow: /pagina-ejemplo/action~month/
+Disallow: /pagina-ejemplo/action~week/
+Disallow: /pagina-ejemplo/action~stream/
