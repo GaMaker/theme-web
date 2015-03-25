@@ -15,8 +15,6 @@ Template: accesspress-parallax
 margin:0 auto;
 }*/
 
-
-
 .timely .ai1ec-agenda-widget-view{
 	width:100%;
 	max-width:100%;
@@ -38,6 +36,38 @@ margin:0 auto;
 
 .timely .ai1ec-agenda-widget-view .ai1ec-event{
 
+}
+
+.team-content{
+	display:none;
+}
+
+.service-list .service-image img{
+	padding:0px;
+}
+
+.mid-content .blank-section{
+	margin-bottom:0px; 
+}
+
+.mid-content .blank-section span{
+	background:#E66432;
+	color:white;
+	float:left;
+	font-size:20pt;
+	width:32%;
+	text-align:center;
+	padding:10px 0px;
+	margin-left:34%;
+}
+
+.slider-caption .caption-title{
+	font-size: 42px;
+	font-weight: bold;
+	text-transform: capitalize;
+	color:#FFF;
+	position: relative;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 @media only screen and (max-width : 550px){

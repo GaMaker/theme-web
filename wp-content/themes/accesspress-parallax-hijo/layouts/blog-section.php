@@ -33,7 +33,7 @@
 			<h3><?php the_title(); ?></h3>
 			<h4 class="posted-date"><i class="fa fa-calendar"></i><?php echo get_the_date(); ?></h4>
 				<?php echo accesspress_letter_count( get_the_excerpt(), 200 ); ?> <br />
-			<span>Read More&nbsp;&nbsp;<i class="fa fa-angle-right"></i></span>
+			<span>Leer más&nbsp;&nbsp;<i class="fa fa-angle-right"></i></span>
 			</div>
 		</a>
 
@@ -44,7 +44,7 @@
 	?>
 	</div>
 	<div class="clearfix btn-wrap">
-	<a class="btn" href="<?php echo get_category_link($category)?>">Read All</a>
+	<a class="btn" href="<?php echo get_category_link($category)?>">Leer todos</a>
 	</div>
 
 
