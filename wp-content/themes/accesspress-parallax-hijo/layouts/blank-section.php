@@ -7,7 +7,7 @@
 ?>
 
 	<div class="content-area blank-section">
-	<span>Somos makers de Gasteiz</span>
+	<span>Somos los makers de Gasteiz</span>
 
 	</div><!-- #primary -->
 
