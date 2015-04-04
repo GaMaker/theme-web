@@ -7,6 +7,7 @@
 ?>
 
 	<div class="content-area googlemap-section">
+
 	<script type="text/javascript">
 		    var map;
 		    function initialize() {

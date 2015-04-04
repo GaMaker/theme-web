@@ -26,7 +26,15 @@
 			<div class="service-image">
 				<?php if(has_post_thumbnail()) : 
 				$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'thumbnail'); ?>
-					<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+
+					<!-- Se aplican filtros sobre los articulos para que no aparezcan las etiquetas br y p en el hover -->
+					<?php
+					$content = apply_filters( 'the_content', get_the_content() );
+					$content = str_replace( '<p>', '', $content );
+					$content = str_replace( '</p>', '', $content );
+					$content = str_replace( '<br />', '', $content );
+					?>
+					<img src="<?php echo $image[0]; ?>" alt="<?php the_title();?>" title="<?php echo $content;?>">
 				<?php else: ?>
 					<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" alt="<?php the_title(); ?>">
 				<?php endif; ?>
@@ -34,7 +42,7 @@
 
 			<div class="service-detail">
 				<h3><?php the_title(); ?></h3>
-				<div class="service-content"><?php the_content(); ?></div>
+				<div class="service-content"><?php /*the_content();*/ ?></div>
 			</div>
 		</div>
 
