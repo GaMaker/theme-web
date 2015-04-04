@@ -505,7 +505,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 
    function accesspress_ray_layout_class($classes){
    	global $post;
-   		if( is_404() || is_home() || is_front_page()){
+   		if( is_404()){
 		$classes[] = ' ';
 		}elseif(is_singular()){
 		$post_class = get_post_meta( $post -> ID, 'accesspress_ray_sidebar_layout', true );
@@ -529,15 +529,6 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
    }
    
    add_filter( 'body_class', 'accesspress_ray_web_layout' );
-
-   function accesspress_ray_post_count_queries( $query ) {
-	  if (!is_admin() && $query->is_main_query()){
-	    if(is_home()){
-	       $query->set('posts_per_page', 1);
-	    }
-	  }
-	}
-	//add_action( 'pre_get_posts', 'accesspress_ray_post_count_queries' );
 
 	function accesspress_ray_custom_css(){
 		global $accesspress_ray_options;

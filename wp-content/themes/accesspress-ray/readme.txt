@@ -61,6 +61,10 @@ Images
     http://pixabay.com/en/wristwatch-watch-time-fashion-407096/
 
 == Changelog ==
+Version 1.13
+* Sidebar Issue for Static home page solved.
+* Emails removed from theme option panel due to over spam emails.
+
 Version 1.12
 * Section in Theme Option page rearranged to make it more user friendly.
 

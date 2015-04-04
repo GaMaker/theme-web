@@ -49,7 +49,7 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 
 		<div id="middle-footer" class="footer-menu">
 			<div class="ak-container">
-				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); 	?>
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'depth' => -1) ); 	?>
 			</div>
 		</div>
 

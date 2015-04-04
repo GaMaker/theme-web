@@ -35,37 +35,52 @@ function accesspress_parallax_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'accesspress_parallax_body_classes' );
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function accesspress_parallax_wp_title( $title, $sep ) {
-	if ( is_feed() ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
+	/**
+	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
+	 *
+	 * @param string $title Default title text for current view.
+	 * @param string $sep Optional separator.
+	 * @return string The filtered title.
+	 */
+	function accesspress_root_wp_title( $title, $sep ) {
+		if ( is_feed() ) {
+			return $title;
+		}
+
+		global $page, $paged;
+
+		// Add the blog name
+		$title .= get_bloginfo( 'name', 'display' );
+
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) ) {
+			$title .= " $sep $site_description";
+		}
+
+		// Add a page number if necessary:
+		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+			$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress-root' ), max( $paged, $page ) );
+		}
+
 		return $title;
 	}
+	add_filter( 'wp_title', 'accesspress_root_wp_title', 10, 2 );
 
-	global $page, $paged;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title .= " $sep $site_description";
+	/**
+	 * Title shim for sites older than WordPress 4.1.
+	 *
+	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+	 * @todo Remove this function when WordPress 4.3 is released.
+	 */
+	function accesspress_root_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
 	}
-
-	// Add a page number if necessary:
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress_parallax' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'accesspress_parallax_wp_title', 10, 2 );
+	add_action( 'wp_head', 'accesspress_root_render_title' );
+endif;
 
 /**
  * Sets the authordata global when viewing an author archive.
@@ -187,7 +202,7 @@ function accesspress_bxslidercb(){
 						<div class="mid-content">
 							<h1 class="caption-title">Welcome to AccessPress Parallax!</h1>
 							<h2 class="caption-description">
-							<p>A full featured parallax theme – and its absolutely free!</p>
+							<p>A full featured parallax theme - and its absolutely free!</p>
 							<p><a href="#">Read More</a></p>
 							</h2>
 						</div>
@@ -200,7 +215,7 @@ function accesspress_bxslidercb(){
 						<div class="ak-container">
 							<h1 class="caption-title">Amazing multi-purpose parallax theme</h1>
 							<h2 class="caption-description">
-							<p>Travel, corporate, small biz, portfolio, agencies, photography, health, creative – useful for anyone and everyone</p>
+							<p>Travel, corporate, small biz, portfolio, agencies, photography, health, creative - useful for anyone and everyone</p>
 							<p><a href="#">Read More</a></p>
 							</h2>
 							</div>
@@ -230,10 +245,12 @@ add_filter('body_class','accesspress_is_parallax');
 
 //Dynamic styles on header
 function accesspress_header_styles_scripts(){
+	$sections = array();
 	$sections = of_get_option('parallax_section');
 	$favicon = of_get_option('fav_icon');
 	$custom_css = of_get_option('custom_css');
 	$custom_js = of_get_option('custom_js');
+	$slider_overlay = of_get_option('slider_overlay');
 	$image_url = get_template_directory_uri()."/images/";
 	echo "<link type='image/png' rel='icon' href='".$favicon."'/>\n";
 	echo "<style type='text/css' media='all'>"; 
@@ -241,6 +258,10 @@ function accesspress_header_styles_scripts(){
 	foreach ($sections as $section) {
 		echo "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
 		echo "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
+	}
+
+	if($slider_overlay == "yes"){
+		echo "#main-slider .overlay{display:none};";
 	}
 	echo $custom_css;
 
@@ -373,3 +394,4 @@ function accesspress_letter_count($content, $limit) {
 	return $limit_content;
 }
 add_filter('widget_text', 'do_shortcode');
+add_filter('show_admin_bar', '__return_false');

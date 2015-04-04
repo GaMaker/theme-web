@@ -17,8 +17,6 @@ function accesspress_ray_admin_scripts() {
 }
 add_action('admin_print_styles-appearance_page_theme_options', 'accesspress_ray_admin_scripts');
 
-
-
 $accesspress_ray_options = array(
 	'responsive_design'=>'',
 	'accesspress_ray_favicon'=> '',
@@ -236,7 +234,7 @@ function accesspress_ray_theme_options_page() {
 	<div class="nav-tab-wrapper">
 	<div class="accesspress_ray-header">
 		<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/logo.png">
-		<h3>Theme Options</h3>
+		<h3><?php _e( 'Theme Options' , 'accesspress_ray' ); ?></h3>
 	</div>
 	<a id="options-group-1-tab" class="nav-tab nav-tab-active" href="#options-group-1"><?php _e('Basic Settings','accesspress_ray'); ?></a>
     <a id="options-group-2-tab" class="nav-tab" href="#options-group-2"><?php _e('Home Page Set Up','accesspress_ray'); ?></a>
@@ -253,7 +251,7 @@ function accesspress_ray_theme_options_page() {
 		</div>
 
 		<div class="any-question">
-			Any question!! Click <a href="<?php echo esc_url('https://accesspressthemes.com/contact/'); ?>" target="_blank">here</a> for Live Chat.
+			<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress_ray' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
 		</div>
 	</div>
 	</div>
@@ -952,10 +950,11 @@ function accesspress_ray_theme_options_page() {
 						<h4><?php _e('Get in touch','accesspress_ray'); ?></h4>
 
 						<p>
-						<?php _e('If you have any question feedback, please get in touch:','accesspress_ray'); ?><br/>
-						<?php _e('General enquiries:','accesspress_ray'); ?> <a href="mailto:<?php echo esc_url('info@accesspressthemes.com'); ?>">info@accesspressthemes.com</a><br/>
-						<?php _e('Support:','accesspress_ray'); ?> <a href="mailto:<?php echo esc_url('support@accesspressthemes.com'); ?>">support@accesspressthemes.com</a><br/>
-						<?php _e('Sales:','accesspress_ray'); ?> <a href="mailto:<?php echo esc_url('sales@accesspressthemes.com'); ?>">sales@accesspressthemes.com</a><br/>
+						<?php _e('If you have any question/feedback regarding theme, please post in our forum','accesspress_ray'); ?><br/>
+						<?php _e('Forum:','accesspress_ray'); ?> <a href="<?php echo esc_url('http://accesspressthemes.com/support/'); ?>">http://accesspressthemes.com/support</a><br/>
+						<br/>
+						<?php _e('For Queries Regading Themes','accesspress_ray'); ?><br/>
+						<?php _e('Support:','accesspress_ray'); ?> <a href="mailto:support@accesspressthemes.com">support@accesspressthemes.com</a><br/>
 						</p>
 
 						<hr />
