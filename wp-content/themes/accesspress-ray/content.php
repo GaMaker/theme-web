@@ -15,9 +15,9 @@ if(!empty($cat_testimonial) && is_category() && is_category($cat_testimonial)): 
 	<div class="cat-testimonial-image clearfix">
 	<?php 
 		if( has_post_thumbnail() ){
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 		?>
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 		<?php }else {?>	
 		<img src="<?php echo get_template_directory_uri(); ?>/images/testimonial-fallback.png" alt="<?php the_title(); ?>">
 		<?php }?>
@@ -36,12 +36,12 @@ if(!empty($cat_testimonial) && is_category() && is_category($cat_testimonial)): 
 
 <article id="post-<?php the_ID(); ?>" class="cat-portfolio-list">
 <?php 
-$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portfolio-thumbnail', false ); 
+$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-portfolio-thumbnail', false ); 
 $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large', false ); 
 ?>
 	<a href="<?php the_permalink(); ?>" >
     <div class="cat-portfolio-image">
-		<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+		<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
     </div>
 	<div class="portofolio-layout">
 		<div class="portofolio-content-wrap">
@@ -75,7 +75,7 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 	<div class="entry-content">
 		<?php if(has_post_thumbnail()){?>
 		<div class="entry-thumbnail">
-			<?php  the_post_thumbnail('featured-thumbnail'); ?>
+			<?php  the_post_thumbnail('accesspress-ray-featured-thumbnail'); ?>
 		</div>
 		<?php } ?>
 		<div class="entry-exrecpt <?php if(!has_post_thumbnail()){ echo "full-width"; }?>">

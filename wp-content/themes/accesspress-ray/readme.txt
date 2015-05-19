@@ -61,6 +61,11 @@ Images
     http://pixabay.com/en/wristwatch-watch-time-fashion-407096/
 
 == Changelog ==
+Version 1.14
+* Option to disable view all button in blog section added.
+* Slider Problem in RTL direction fixed.
+* Minor Changes in Theme Option Panel.
+
 Version 1.13
 * Sidebar Issue for Static home page solved.
 * Emails removed from theme option panel due to over spam emails.

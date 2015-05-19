@@ -13,7 +13,7 @@ function accesspress_ray_add_sidebar_layout_box()
 {
     add_meta_box(
                  'accesspress_ray_sidebar_layout', // $id
-                 'Sidebar Layout', // $title
+                 __('Sidebar Layout', 'accesspress_ray' ), // $title
                  'accesspress_ray_sidebar_layout_callback', // $callback
                  'post', // $page
                  'normal', // $context
@@ -21,7 +21,7 @@ function accesspress_ray_add_sidebar_layout_box()
 
     add_meta_box(
                  'accesspress_ray_sidebar_layout', // $id
-                 'Sidebar Layout', // $title
+                 __('Sidebar Layout', 'accesspress_ray'), // $title
                  'accesspress_ray_sidebar_layout_callback', // $callback
                  'page', // $page
                  'normal', // $context
@@ -62,7 +62,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspress_ray_sidebar_layout_nonce' );
 
 <table class="form-table">
 <tr>
-<td colspan="4"><em class="f13">Choose Sidebar Template</em></td>
+<td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template', 'accesspress_ray'); ?></em></td>
 </tr>
 
 <tr>
@@ -83,7 +83,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspress_ray_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13">You can set up the sidebar content <a href="<?php echo admin_url('/themes.php?page=theme_options'); ?>">here</a></em></td>
+    <td><em class="f13"><?php sprintf(__('You can set up the sidebar content <a href="%s">here</a>', 'accesspress_ray'), esc_url(admin_url('/themes.php?page=theme_options'))); ?>; ?></em></td>
 </tr>
 </table>
 

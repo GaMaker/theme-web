@@ -15,7 +15,7 @@ get_header(); ?>
 				</header><!-- .page-header -->
 
 				<div class="error-404">
-                <span class="breeze-404">404</span> 
+                <span class="breeze-404"><?php _e('404' , 'accesspress_ray' ); ?></span> 
                 <span class="breeze-error"><?php _e('error' , 'accesspress_ray' ); ?></span>   
                 </div>
 

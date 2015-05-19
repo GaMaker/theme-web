@@ -50,9 +50,9 @@ function accesspress_ray_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 
-	add_image_size( 'event-thumbnail', 135, 100, true); //Latest News Events Small Image
-	add_image_size( 'featured-thumbnail', 350, 245, true); //Featured Image
-	add_image_size( 'portfolio-thumbnail', 400, 450, true); //Portfolio Image		
+	add_image_size( 'accesspress-ray-event-thumbnail', 135, 100, true); //Latest News Events Small Image
+	add_image_size( 'accesspress-ray-featured-thumbnail', 350, 245, true); //Featured Image
+	add_image_size( 'accesspress-ray-portfolio-thumbnail', 400, 450, true); //Portfolio Image		
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -206,19 +206,18 @@ function accesspress_ray_scripts() {
 	$query_args = array(
 		'family' => 'Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700|Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic|Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic',
 	);
-	wp_enqueue_style( 'font-css', get_template_directory_uri() . '/css/fonts.css' );
-	wp_enqueue_style( 'google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-	wp_enqueue_style( 'fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
-	wp_enqueue_style( 'bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
-	wp_enqueue_style( 'accesspress_ray-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'accesspress-ray-font-css', get_template_directory_uri() . '/css/fonts.css' );
+	wp_enqueue_style( 'accesspress-ray-google-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ) );
+	wp_enqueue_style( 'accesspress-ray-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'accesspress-ray-fancybox-css', get_template_directory_uri() . '/css/nivo-lightbox.css' );
+	wp_enqueue_style( 'accesspress-ray-bx-slider-style', get_template_directory_uri() . '/css/jquery.bxslider.css' );
+	wp_enqueue_style( 'accesspress-ray-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('accesspress_parallax-googlemap', '//maps.googleapis.com/maps/api/js?v=3.exp?sensor=false', array('jquery'), '3.0', false);
-	wp_enqueue_script( 'bx-slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
-	wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
-	wp_enqueue_script( 'jquery-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
-	wp_enqueue_script( 'accesspress_ray-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
+	wp_enqueue_script( 'accesspress-ray-bx-slider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
+	wp_enqueue_script( 'accesspress-ray-fancybox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
+	wp_enqueue_script( 'accesspress-ray-jquery-actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
+	wp_enqueue_script( 'accesspress-ray--skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'accesspress-ray-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -228,7 +227,7 @@ function accesspress_ray_scripts() {
 * Loads up responsive css if it is not disabled
 */
 	if ( $accesspress_ray_settings[ 'responsive_design' ] == 0 ) {	
-		wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css' );
+		wp_enqueue_style( 'accesspress-ray-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
@@ -241,7 +240,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
 		
 		if( !empty($accesspress_ray_settings[ 'media_upload' ])){
-		echo '<link rel="shortcut icon" type="image/png" href="'. $accesspress_ray_settings[ 'media_upload' ].'"/>';
+		echo '<link rel="shortcut icon" type="image/png" href="'. esc_url($accesspress_ray_settings[ 'media_upload' ]).'"/>';
 		}
 	}
 	add_action('wp_head', 'accesspress_ray_add_favicon');
@@ -313,7 +312,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 		global $accesspress_ray_options;
 		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
 		if(!empty($accesspress_ray_settings['featured_text'])){
-		echo '<div class="header-text">'.wpautop($accesspress_ray_settings['featured_text']).'</div>';
+		echo '<div class="header-text">'.esc_html(wpautop($accesspress_ray_settings['featured_text'])).'</div>';
 		}
 	}
 
@@ -329,7 +328,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 		}else{
 			$accesspress_ray_alignment_class="";
 		}
-		echo $accesspress_ray_alignment_class;
+		echo esc_attr($accesspress_ray_alignment_class);
 	}
 
 	add_action('accesspress_ray_logo_alignment','accesspress_ray_logo_alignment_cb', 10);
@@ -353,7 +352,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
         ($accesspress_ray_settings['slider_show_controls'] == 'yes2' || empty($accesspress_ray_settings['slider_show_controls'])) ? ($b='true') : ($b='false');
         ($accesspress_ray_settings['slider_mode'] == 'slide' || empty($accesspress_ray_settings['slider_mode'])) ? ($c='horizontal') : ($c='fade');
         ($accesspress_ray_settings['slider_auto'] == 'yes3' || empty($accesspress_ray_settings['slider_auto'])) ? ($d='true') : ($d='false');
-		empty($accesspress_ray_settings['slider_pause']) ? ($e ='5000') : ($e = $accesspress_ray_settings['slider_pause']);
+		empty($accesspress_ray_settings['slider_pause']) ? ($e ='5000') : ($e = esc_attr($accesspress_ray_settings['slider_pause']));
 
 		if( $accesspress_ray_settings['show_slider'] !='no') { 
 		if((isset($accesspress_ray_settings['slider1']) && !empty($accesspress_ray_settings['slider1'])) 
@@ -374,7 +373,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 					auto :<?php echo $d; ?>,
 					pause: '<?php echo $e; ?>',
 					<?php if($accesspress_ray_settings['slider_speed']) {?>
-					speed:'<?php echo $accesspress_ray_settings['slider_speed']; ?>'
+					speed:'<?php echo esc_attr($accesspress_ray_settings['slider_speed']); ?>'
 					<?php } ?>
 				});
 			});
@@ -401,7 +400,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 						?>
 						<div class="slides">
 							
-								<img src="<?php echo $image[0]; ?>">
+								<img src="<?php echo esc_url($image[0]); ?>">
 								
 								<?php if($accesspress_ray_settings['slider_caption']=='yes4'):?>
 								<div class="slider-caption">
@@ -433,7 +432,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 					?>
 					<div class="slides">
 							
-							<img src="<?php echo $image[0]; ?>">
+							<img src="<?php echo esc_url($image[0]); ?>">
 								
 							<?php if($accesspress_ray_settings['slider_caption']=='yes4'):?>
 							<div class="slider-caption">
@@ -473,10 +472,10 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
                     <?php if($accesspress_ray_settings['slider_caption']=='yes4' || empty($accesspress_ray_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">AccessPress Ray</h1><br />
-							<h2 class="caption-description">Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.</h2>
+							<h1 class="caption-title"><?php _e('AccessPress Ray','accesspress_ray'); ?></h1><br />
+							<h2 class="caption-description"><?php _e('Responsive, multi-purpose, business wordpress theme, perfect for any business on any device.','accesspress_ray'); ?></h2>
 							<br>
-							<a href="#">Read More</a>
+							<a href="#"><?php _e('Read More','accesspress_ray'); ?></a>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -487,10 +486,10 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
                     <?php if($accesspress_ray_settings['slider_caption']=='yes4' || empty($accesspress_ray_settings['slider_caption'])):?>
 					<div class="slider-caption">
 						<div class="ak-container">
-							<h1 class="caption-title">Easy Customization</h1>
-							<h2 class="caption-description">A theme with powerful theme options for customization. Style your wordpress and see changes live!</h2>
+							<h1 class="caption-title"><?php _e('Easy Customization','accesspress_ray'); ?></h1>
+							<h2 class="caption-description"><?php _e('A theme with powerful theme options for customization. Style your wordpress and see changes live!','accesspress_ray'); ?></h2>
 							<br>
-							<a href="#">Read More</a>
+							<a href="#"><?php _e('Read More','accesspress_ray'); ?></a>
 						</div>
 					</div>
                     <?php  endif; ?>
@@ -534,19 +533,11 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 		global $accesspress_ray_options;
 		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
 		echo '<style type="text/css">';
-			echo $accesspress_ray_settings['custom_css'];
+			echo esc_attr($accesspress_ray_settings['custom_css']);
 		echo '</style>';
 	}
 
 	add_action('wp_head','accesspress_ray_custom_css');
-
-	function accesspress_ray_custom_code(){
-		global $accesspress_ray_options;
-		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
-			echo $accesspress_ray_settings['custom_code'];
-	}
-
-	add_action('wp_footer','accesspress_ray_custom_code');
 
 	function accesspress_ray_call_to_action_cb(){
 		global $accesspress_ray_options;
@@ -555,8 +546,8 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 		?>
 		<section id="call-to-action">
 		<div class="ak-container">
-			<h4><?php echo $accesspress_ray_settings['action_text']; ?></h4>
-			<a class="action-btn" href="<?php echo $accesspress_ray_settings['action_btn_link']; ?>"><?php echo $accesspress_ray_settings['action_btn_text']; ?></a>
+			<h4><?php echo esc_attr($accesspress_ray_settings['action_text']); ?></h4>
+			<a class="action-btn" href="<?php echo esc_url($accesspress_ray_settings['action_btn_link']); ?>"><?php echo esc_attr($accesspress_ray_settings['action_btn_text']); ?></a>
 		</div>
 		</section>
 		<?php
@@ -564,5 +555,27 @@ add_action( 'wp_enqueue_scripts', 'accesspress_ray_scripts' );
 	}
 
 	add_action('accesspress_ray_call_to_action','accesspress_ray_call_to_action_cb', 10);
-    
-    add_filter('widget_text', 'do_shortcode');
+
+	function accesspress_ray_exclude_cat_from_blog($query) {
+	global $accesspress_ray_options;
+	$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
+	$accesspress_ray_exclude_cat = array($accesspress_ray_settings['blog_cat'],$accesspress_ray_settings['testimonial_cat'], $accesspress_ray_settings['slider_cat'], $accesspress_ray_settings['portfolio_cat']);
+		
+	if(!empty($accesspress_ray_exclude_cat)):
+	    $cats = array();
+	    foreach($accesspress_ray_exclude_cat as $value){
+	        if(!empty($value) && $value != 0){
+	            $cats[] = -$value; 
+	        }
+	    }
+	    if(!empty($cats)){
+		    $category = join( "," , $cats);
+		    if ( $query->is_home() ) {
+		    $query->set('cat', $category);
+		    }
+	    }
+	    return $query;
+	endif;
+	}
+
+	add_filter('pre_get_posts', 'accesspress_ray_exclude_cat_from_blog');

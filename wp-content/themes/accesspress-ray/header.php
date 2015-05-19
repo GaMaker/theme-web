@@ -37,8 +37,8 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 					<?php if ( get_header_image() ) { ?>
 						<img src="<?php header_image(); ?>" alt="<?php bloginfo('name') ?>">
 					<?php }else{ ?>
-						<h1><?php echo bloginfo('title'); ?></h1>
-						<div class="tagline"><?php echo bloginfo('description'); ?></div>
+						<h1 class="site-title"><?php echo bloginfo('title'); ?></h1>
+						<div class="tagline site-description"><?php echo bloginfo('description'); ?></div>
 					<?php } ?>		
 					</a>		
 				</div><!-- .site-branding -->        		

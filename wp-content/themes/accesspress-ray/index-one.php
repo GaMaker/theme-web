@@ -1,5 +1,5 @@
 <?php 
-global $accesspress_ray_options, $post;
+global $accesspress_ray_options, $post, $allowedtags;
 $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
 $accesspress_ray_blog_cat = $accesspress_ray_settings['blog_cat'];
 $accesspress_ray_call_to_action_post_id = $accesspress_ray_settings['call_to_action_post'];
@@ -12,18 +12,21 @@ $featured_post4 = $accesspress_ray_settings['featured_post4'];
 $show_fontawesome_icon = $accesspress_ray_settings['show_fontawesome'];
 $testimonial_category = $accesspress_ray_settings['testimonial_cat'];
 $accesspress_ray_featured_bar = $accesspress_ray_settings['featured_bar'];
+$accesspress_ray_hide_blogmore = $accesspress_ray_settings['hide_blogmore'];
 $accesspress_ray_call_to_action_post_char = (isset($accesspress_ray_settings['call_to_action_post_char']) ? $accesspress_ray_settings['call_to_action_post_char'] : 650 );
 $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_number']) ? $accesspress_ray_settings['show_blog_number'] : 3 ) ;
+$accesspress_ray_show_blog = $accesspress_ray_settings['show_blog'];
+$accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 ?>
 
 <section id="mid-section" class="featured-section clearfix">
 	<div class="ak-container">
 		<?php if(!empty($accesspress_ray_featured_title)): ?>
-		<h3 class="roboto-light main-title"><?php echo $accesspress_ray_featured_title; ?></h3>
+		<h3 class="roboto-light main-title"><?php echo esc_attr($accesspress_ray_featured_title); ?></h3>
 		<?php endif; ?>
 
 		<?php if(!empty($accesspress_ray_featured_text)): ?>
-		<div class="sub-desc"><?php echo $accesspress_ray_featured_text; ?></div>
+		<div class="sub-desc"><?php echo esc_html($accesspress_ray_featured_text); ?></div>
 		<?php endif; ?>
 
 		<div class="featured-post-wrapper clearfix">
@@ -43,9 +46,9 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<a href="<?php the_permalink(); ?>">
 									<?php 							
 									if( has_post_thumbnail()){
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 									?>
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									<?php }else { ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 									<?php } 
@@ -58,7 +61,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 							<?php 
 							if($show_fontawesome_icon == 1){ ?>
 							<div class="featured-icon">
-							<i class="fa <?php echo $accesspress_ray_settings['featured_post1_icon'] ?>"></i>
+							<i class="fa <?php echo esc_attr($accesspress_ray_settings['featured_post1_icon']) ?>"></i>
 							</div>		
 							<?php } ?>
 							
@@ -68,7 +71,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
-								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo $accesspress_ray_settings['featured_post_readmore']; ?></a>
+								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
 							</div>
 						<?php endwhile;
@@ -91,9 +94,9 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<a href="<?php the_permalink(); ?>">
 									<?php 							
 									if( has_post_thumbnail()){
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 									?>
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									<?php }else { ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 									<?php } 
@@ -106,7 +109,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 							<?php 
 							if($show_fontawesome_icon == 1){ ?>
 							<div class="featured-icon">
-							<i class="fa <?php echo $accesspress_ray_settings['featured_post2_icon'] ?>"></i>
+							<i class="fa <?php echo esc_attr($accesspress_ray_settings['featured_post2_icon']) ?>"></i>
 							</div>		
 							<?php } ?>
 							
@@ -116,7 +119,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
-								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo $accesspress_ray_settings['featured_post_readmore']; ?></a>
+								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
 							</div>
 						<?php endwhile;
@@ -139,9 +142,9 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<a href="<?php the_permalink(); ?>">
 									<?php 							
 									if( has_post_thumbnail()){
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 									?>
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									<?php }else { ?>
 									<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
 									<?php } 
@@ -154,7 +157,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 							<?php 
 							if($show_fontawesome_icon == 1){ ?>
 							<div class="featured-icon">
-							<i class="fa <?php echo $accesspress_ray_settings['featured_post3_icon'] ?>"></i>
+							<i class="fa <?php echo esc_attr($accesspress_ray_settings['featured_post3_icon']) ?>"></i>
 							</div>		
 							<?php } ?>
 							
@@ -164,7 +167,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
-								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo $accesspress_ray_settings['featured_post_readmore']; ?></a>
+								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
 							</div>
 						<?php endwhile;
@@ -185,11 +188,9 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<a href="<?php the_permalink(); ?>">
 									<?php 							
 									if( has_post_thumbnail()){
-									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+									$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 									?>
-									<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
-									<?php }else { ?>
-									<img src="<?php echo get_template_directory_uri(); ?>/images/demo/featured-fallback.jpg" alt="<?php the_title(); ?>">
+									<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
 									<?php } 
 									?>
 								</a>
@@ -200,7 +201,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 							<?php 
 							if($show_fontawesome_icon == 1){ ?>
 							<div class="featured-icon">
-							<i class="fa <?php echo $accesspress_ray_settings['featured_post4_icon'] ?>"></i>
+							<i class="fa <?php echo esc_attr($accesspress_ray_settings['featured_post4_icon']) ?>"></i>
 							</div>		
 							<?php } ?>
 							
@@ -210,7 +211,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
-								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo $accesspress_ray_settings['featured_post_readmore']; ?></a>
+								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
 							</div>
 						<?php endwhile;
@@ -229,9 +230,9 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 				</figure>
 
 				<div class="featured-content">
-					<h2 class="featured-title"><a href="#">Featured Post <?php echo $featured_post; ?></a></h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus, purus id ultrices tristique, velit ante accumsan metus, non porttitor tortor elit pellentesque felis...</p>
-					<a href="#" class="view-more">Read More</a>
+					<h2 class="featured-title"><a href="#"><?php echo __('Featured Post ','accesspress_ray').$featured_post; ?></a></h2>
+					<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus, purus id ultrices tristique, velit ante accumsan metus, non porttitor tortor elit pellentesque felis...','accesspress_ray'); ?></p>
+					<a href="#" class="view-more"><?php _e('Read More','accesspress_ray'); ?></a>
 				</div>
 			</div>
 			<?php }
@@ -256,7 +257,7 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 					<?php if($accesspress_ray_settings['call_to_action_post_content'] == 0 || empty($accesspress_ray_settings['call_to_action_post_content'])){ ?>
 						<p><?php echo accesspress_ray_excerpt( get_the_content() , $accesspress_ray_call_to_action_post_char ) ?></p>
 						<?php if(!empty($accesspress_ray_settings['call_to_action_post_readmore'])){?>
-							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo $accesspress_ray_settings['call_to_action_post_readmore']; ?></a>
+							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspress_ray_settings['call_to_action_post_readmore']); ?></a>
 						<?php } 
 					}else{ 
 						the_content();
@@ -270,10 +271,10 @@ $accesspress_ray_show_blog_number = (isset($accesspress_ray_settings['show_blog_
 				
 				else{ ?>
 				
-				<h1 class="roboto-light main-title"><a href="#">Welcome to AccessPress Ray</a></h1>
+				<h1 class="roboto-light main-title"><a href="#"><?php _e('Welcome to AccessPress Ray','accesspress_ray') ?></a></h1>
 				<div  class="welcome-detail">
-				<p>Free Responsive, Multipurpose Business and Corporate Theme perfect for any business.</p>
-				<a class="read-more bttn" href="#">Read More</a>
+				<p><?php _e('Free Responsive, Multipurpose Business and Corporate Theme perfect for any business.','accesspress_ray') ?></p>
+				<a class="read-more bttn" href="#"><?php _e('Read More','accesspress_ray') ?></a>
 				</div>
 
 			<?php } ?>
@@ -339,14 +340,15 @@ endif;
 						<a href="<?php the_permalink(); ?>">
 						<?php 
 						if( has_post_thumbnail() ){
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'featured-thumbnail', false ); 
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'accesspress-ray-featured-thumbnail', false ); 
 						?>
-						<img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>">
-						<?php } else { ?>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/demo/event-fallback.jpg" alt="<?php the_title(); ?>">
-						<?php } ?>
-						
-						<?php 
+						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php the_title(); ?>">
+						<?php }else{
+						?>
+						<img src="<?php echo get_template_directory_uri() ?>/images/blog-fallback.jpg">
+						<?php	
+						} 
+
 						if($accesspress_ray_settings['show_blogdate'] == 1){ ?>
 							<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>
@@ -365,14 +367,18 @@ endif;
 		        			<?php echo accesspress_ray_excerpt( get_the_content() , 210 ) ?>
 		        		</div>
 
-						<a class="read-more-btn" href="<?php echo the_permalink(); ?>"><?php echo $accesspress_ray_settings['read_more_text'];?><span class="read-icon-wrap"><i class="fa fa-angle-right"></i></span></a>
+						<a class="read-more-btn" href="<?php echo the_permalink(); ?>"><?php echo esc_html($accesspress_ray_settings['read_more_text']);?><span class="read-icon-wrap"><i class="fa fa-angle-right"></i></span></a>
 
 	        		</div>
 	        	</div>
 	        
 	        <?php endwhile; ?>
 			</div>
+			<?php if($accesspress_ray_hide_blogmore != 1 ) { ?>
 	        <a href="<?php echo get_category_link($accesspress_ray_blog_cat); ?>" class="view-all clearfix"><?php _e('view all','accesspress_ray');?></a>
+			<?php }else{ ?>
+			<div class="clearfix">&nbsp;</div>
+			<?php } ?>
 			</div>
 
 	        <?php wp_reset_postdata(); 
@@ -397,19 +403,19 @@ endif;
 
 						<div class="event-detail clearfix">
 			        		<h4 class="event-title">
-			        			<a href="#">Blog Post <?php echo $event_count; ?></a>
+			        			<a href="#"><?php echo __('Blog Post ','accesspress_ray'). $event_count; ?></a>
 			        		</h4>
 
 			        		<div class="event-excerpt">
-			        			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus, purus id ultrices tristique, velit ante accumsan metus, non porttitor tortor elit pellentesque felis...
+			        			<?php _e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus, purus id ultrices tristique, velit ante accumsan metus, non porttitor tortor elit pellentesque felis...','accesspress_ray') ?>
 			        		</div>
 
-			        		<a class="read-more-btn" href="#">Read More <span class="read-icon-wrap"><i class="fa fa-angle-right"></i></span></a>
+			        		<a class="read-more-btn" href="#"><?php _e('Read More','accesspress_ray') ?> <span class="read-icon-wrap"><i class="fa fa-angle-right"></i></span></a>
 		        		</div>
 		        </div>		        
 		        <?php } ?>
 		        </div>
-		        <a href="#" class="view-all clearfix">view all</a>
+		        <a href="#" class="view-all clearfix"><?php _e('view all','accesspress_ray') ?></a>
 		    </div>
 	        <?php }  ?>	
 	</div>
@@ -453,7 +459,7 @@ endif;
 				        
 						}else{ 
 						?>
-						<h3 class="widget-title roboto-light">What our Clients Say</h3>
+						<h3 class="widget-title roboto-light"><?php _e('What our Clients Say', 'accesspress_ray') ?></h3>
 						<div class="testimonial-wrap">
 							<div class="testimonial-slider">
 								<div class="testimonial-slide">
@@ -462,9 +468,9 @@ endif;
 						        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/Yanetxys-Torreblanca.jpg">
 						        		</div>
 
-						        		<div class="testimonial-excerpt">Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.</div>
+						        		<div class="testimonial-excerpt"><?php _e('Thanks for delivering top quality services to your clients. It just takes a minute to get an answer from you when in difficulties.', 'accesspress_ray') ?></div>
 						        	</div>
-									<div class="testimoinal-client-name">Yanetxys Torreblanca</div>
+									<div class="testimoinal-client-name"><?php _e('Yanetxys Torreblanca', 'accesspress_ray') ?></div>
 								</div>
 
 								<div class="testimonial-slide">
@@ -473,9 +479,9 @@ endif;
 						        		<img src="<?php echo get_template_directory_uri(); ?>/images/demo/David-Soriano.jpg">
 						        		</div>
 
-						        		<div class="testimonial-excerpt">Thank you very much the support team AccessPress Ray for service, are really wonderful in their care and in the resolution of the problem.</div>
+						        		<div class="testimonial-excerpt"><?php _e('Thank you very much the support team AccessPress Ray for service, are really wonderful in their care and in the resolution of the problem.', 'accesspress_ray') ?></div>
 						        	</div>
-									<div class="testimoinal-client-name">David Soriano</div>
+									<div class="testimoinal-client-name"><?php _e('David Soriano', 'accesspress_ray') ?></div>
 								</div>
 							</div>
 						</div>
@@ -483,47 +489,33 @@ endif;
 	</div>			
 </section>
 
-<?php
-if(!empty($accesspress_ray_settings['latitude']) && !empty($accesspress_ray_settings['longitude'])) { 
-?>           
-<section id="google-map" class="clearfix">
-		<div id="ap-map-canvas"></div>
-		<?php 
-		global $accesspress_ray_options;
-		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
-        ?>
-        	<script type="text/javascript">
-				    var map;
-				    function initialize() {
-				      var mapOptions = {
-				        zoom: 18,
-				        center: new google.maps.LatLng(<?php echo $accesspress_ray_settings['latitude']; ?>, <?php echo $accesspress_ray_settings['longitude']; ?> ),
-				        mapTypeId: google.maps.MapTypeId.ROADMAP,
-				        scrollwheel: false,
-				        mapTypeControlOptions: {
-				            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-				        },
-				      };
-				      map = new google.maps.Map(document.getElementById('ap-map-canvas'),
-				          mapOptions);
-				    }
-				    google.maps.event.addDomListener(window, 'load', initialize);
-			</script>
+<?php if($accesspress_ray_show_blog == 1){ ?>
+<section id="accesspress-blog">
+<div class="ak-container" id="blog-post">
+<h3 class="roboto-light main-title"><?php echo esc_html($accesspress_ray_blog_title); ?></h3>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-						
-			<?php
+		<?php if ( have_posts() ) : ?>
 
-			if(!empty($accesspress_ray_settings['contact_address'])) { ?>
-			<div class="google-section-wrap ak-container">			
-			<div class="ak-contact-address">
-			<h3><?php _e('Contact Us', 'accesspress_ray'); ?></h3>
-			<?php echo wpautop($accesspress_ray_settings['contact_address']);
-				do_action( 'accesspress_ray_social_links' ); 
+			<?php 
+			while ( have_posts() ) : the_post(); 
+			get_template_part( 'content', 'summary' );
+			endwhile;
 			?>
-			</div>
-			</div>
 
-			<?php } ?>
-		
+			<?php accesspress_ray_paging_nav(); ?>
+
+		<?php else : ?>
+
+			<?php get_template_part( 'content', 'none' ); ?>
+
+		<?php endif; ?>
+		<?php wp_reset_query(); ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php get_sidebar('right'); ?>
+</div>
 </section>
 <?php } ?>
