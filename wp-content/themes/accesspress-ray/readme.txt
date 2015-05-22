@@ -61,6 +61,15 @@ Images
     http://pixabay.com/en/wristwatch-watch-time-fashion-407096/
 
 == Changelog ==
+Version 1.15.6
+* Plugins Added via TGM-Plugin-Activation
+* Minor changes in the escaping of the outputs
+* Minor Design Changes
+* language .pot file updated
+
+Version 1.15
+* Google Map V2 integration removed as suggested by theme reviewer.
+
 Version 1.14
 * Option to disable view all button in blog section added.
 * Slider Problem in RTL direction fixed.

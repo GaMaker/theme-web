@@ -272,6 +272,6 @@
 
 @media screen and (min-width:993px){
     #site-navigation .menu{
-        display: block !important;
+        display: inline-block !important;
     }
 }

@@ -19,14 +19,54 @@ $accesspress_ray_show_blog = $accesspress_ray_settings['show_blog'];
 $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 ?>
 
+<section id="about-section">
+	<div class="ak-container clearfix">
+	<?php
+		
+			if(!empty($accesspress_ray_call_to_action_post_id)){
+			
+			$query1 = new WP_Query( 'p='.$accesspress_ray_call_to_action_post_id );
+				while ($query1->have_posts()) : $query1->the_post(); ?>
+					 
+					<h1 class="roboto-light main-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+						
+					<div class="welcome-detail">
+					
+					<?php if($accesspress_ray_settings['call_to_action_post_content'] == 0 || empty($accesspress_ray_settings['call_to_action_post_content'])){ ?>
+						<p class="welcome-content"><?php echo accesspress_ray_excerpt( get_the_content() , $accesspress_ray_call_to_action_post_char ) ?></p>
+						<?php if(!empty($accesspress_ray_settings['call_to_action_post_readmore'])){?>
+							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_html($accesspress_ray_settings['call_to_action_post_readmore']); ?></a>
+						<?php } 
+					}else{ 
+						the_content();
+					} ?>
+					
+					</div>
+					
+				<?php endwhile;	
+				wp_reset_postdata(); 
+				}
+				
+				else{ ?>
+				
+				<h1 class="roboto-light main-title"><a href="#"><?php _e('Welcome to AccessPress Ray','accesspress_ray') ?></a></h1>
+				<div  class="welcome-detail">
+				<p><?php _e('Free Responsive, Multipurpose Business and Corporate Theme perfect for any business.','accesspress_ray') ?></p>
+				<a class="read-more bttn" href="#"><?php _e('Read More','accesspress_ray') ?></a>
+				</div>
+
+			<?php } ?>
+	</div>
+</section>
+
 <section id="mid-section" class="featured-section clearfix">
 	<div class="ak-container">
 		<?php if(!empty($accesspress_ray_featured_title)): ?>
-		<h3 class="roboto-light main-title"><?php echo esc_attr($accesspress_ray_featured_title); ?></h3>
+		<h3 class="roboto-light main-title"><?php echo esc_html($accesspress_ray_featured_title); ?></h3>
 		<?php endif; ?>
 
 		<?php if(!empty($accesspress_ray_featured_text)): ?>
-		<div class="sub-desc"><?php echo esc_html($accesspress_ray_featured_text); ?></div>
+		<div class="sub-desc"><?php echo wp_kses_post($accesspress_ray_featured_text); ?></div>
 		<?php endif; ?>
 
 		<div class="featured-post-wrapper clearfix">
@@ -69,7 +109,7 @@ $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 
 							<div class="featured-content">
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
+								<p><?php echo accesspress_ray_excerpt( get_the_content() , 160 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
 								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
@@ -117,7 +157,7 @@ $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 
 							<div class="featured-content">
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
+								<p><?php echo accesspress_ray_excerpt( get_the_content() , 160 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
 								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
@@ -165,7 +205,7 @@ $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 
 							<div class="featured-content">
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
+								<p><?php echo accesspress_ray_excerpt( get_the_content() , 160 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
 								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
@@ -209,7 +249,7 @@ $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 
 							<div class="featured-content">
 								<h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p><?php echo accesspress_ray_excerpt( get_the_content() , 260 ) ?></p>
+								<p><?php echo accesspress_ray_excerpt( get_the_content() , 160 ) ?></p>
 								<?php if(!empty($accesspress_ray_settings['featured_post_readmore'])){?>
 								<a href="<?php the_permalink(); ?>" class="view-more"><?php echo esc_attr($accesspress_ray_settings['featured_post_readmore']); ?></a>
 								<?php } ?>
@@ -240,83 +280,6 @@ $accesspress_ray_blog_title = $accesspress_ray_settings['blog_title'];
 		</div>	
 	</div>
 </section>
-
-<section id="about-section">
-	<div class="ak-container clearfix">
-	<?php
-		
-			if(!empty($accesspress_ray_call_to_action_post_id)){
-			
-			$query1 = new WP_Query( 'p='.$accesspress_ray_call_to_action_post_id );
-				while ($query1->have_posts()) : $query1->the_post(); ?>
-					 
-					<h1 class="roboto-light main-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-						
-					<div class="welcome-detail">
-					
-					<?php if($accesspress_ray_settings['call_to_action_post_content'] == 0 || empty($accesspress_ray_settings['call_to_action_post_content'])){ ?>
-						<p><?php echo accesspress_ray_excerpt( get_the_content() , $accesspress_ray_call_to_action_post_char ) ?></p>
-						<?php if(!empty($accesspress_ray_settings['call_to_action_post_readmore'])){?>
-							<a href="<?php the_permalink(); ?>" class="read-more bttn"><?php echo esc_attr($accesspress_ray_settings['call_to_action_post_readmore']); ?></a>
-						<?php } 
-					}else{ 
-						the_content();
-					} ?>
-					
-					</div>
-					
-				<?php endwhile;	
-				wp_reset_postdata(); 
-				}
-				
-				else{ ?>
-				
-				<h1 class="roboto-light main-title"><a href="#"><?php _e('Welcome to AccessPress Ray','accesspress_ray') ?></a></h1>
-				<div  class="welcome-detail">
-				<p><?php _e('Free Responsive, Multipurpose Business and Corporate Theme perfect for any business.','accesspress_ray') ?></p>
-				<a class="read-more bttn" href="#"><?php _e('Read More','accesspress_ray') ?></a>
-				</div>
-
-			<?php } ?>
-	</div>
-</section>
-
-
-<?php
-if(is_active_sidebar( 'textblock-1' ) || is_active_sidebar( 'textblock-2' ) || is_active_sidebar( 'textblock-3' )):
-	if($accesspress_ray_featured_bar != 1) :?>
-
-<section id="bottom1-section" class="business-section clearfix">
-	<div class="ak-container">
-		<div class="business-activities-wrapper clearfix">
-	        <div class="business-wrapper clearfix">
-			<?php if ( is_active_sidebar( 'textblock-1' ) ) : ?>
-			  <?php dynamic_sidebar( 'textblock-1' ); ?>
-			<?php endif; ?>	
-			</div>
-	        
-	        <div class="business-wrapper clearfix">
-	        <?php 
-	        if ( is_active_sidebar( 'textblock-2' ) ) : ?>
-			  <?php dynamic_sidebar( 'textblock-2' ); ?>
-	        <?php endif; ?>	
-			</div>    
-	        
-
-	        <div class="business-wrapper clearfix">
-				<?php 
-				if ( is_active_sidebar( 'textblock-3' ) ) {
-					dynamic_sidebar( 'textblock-3' );
-				}
-				?>
-			</div>
-		</div>
-	</div>
-</section>
-<?php 
-	endif; 
-endif;
-?>
 
 <section id="top-section" class="events-section clearfix">
 	<div id="latest-events" class="ak-container clearfix">
@@ -421,6 +384,42 @@ endif;
 	</div>
 </section>
 
+<?php
+if(is_active_sidebar( 'textblock-1' ) || is_active_sidebar( 'textblock-2' ) || is_active_sidebar( 'textblock-3' )):
+	if($accesspress_ray_featured_bar != 1) :?>
+
+<section id="bottom1-section" class="business-section clearfix">
+	<div class="ak-container">
+		<div class="business-activities-wrapper clearfix">
+	        <div class="business-wrapper clearfix">
+			<?php if ( is_active_sidebar( 'textblock-1' ) ) : ?>
+			  <?php dynamic_sidebar( 'textblock-1' ); ?>
+			<?php endif; ?>	
+			</div>
+	        
+	        <div class="business-wrapper clearfix">
+	        <?php 
+	        if ( is_active_sidebar( 'textblock-2' ) ) : ?>
+			  <?php dynamic_sidebar( 'textblock-2' ); ?>
+	        <?php endif; ?>	
+			</div>    
+	        
+
+	        <div class="business-wrapper clearfix">
+				<?php 
+				if ( is_active_sidebar( 'textblock-3' ) ) {
+					dynamic_sidebar( 'textblock-3' );
+				}
+				?>
+			</div>
+		</div>
+	</div>
+</section>
+<?php 
+	endif; 
+endif;
+?>
+
 <section id="bottom2-section" class="clients-say-section clearfix">
 	<div class="ak-container">
 		<?php if(!empty($testimonial_category)) {	?>
@@ -517,5 +516,35 @@ endif;
 
 	<?php get_sidebar('right'); ?>
 </div>
+</section>
+<?php } ?>
+
+<?php
+if(!empty($accesspress_ray_settings['google_map'])) { 
+?>           
+<section id="google-map" class="clearfix">
+		<?php 
+		global $accesspress_ray_options;
+		$allowed = array(
+			'iframe' => array(
+				'src' => array()
+				)
+			);
+		$accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_ray_options );
+        	
+        echo wp_kses($accesspress_ray_settings['google_map'] , $allowed);
+					
+		if(!empty($accesspress_ray_settings['contact_address'])) { ?>
+		<div class="google-section-wrap ak-container">			
+		<div class="ak-contact-address">
+		<h3><?php _e('Contact Us', 'accesspress_ray'); ?></h3>
+		<?php echo wpautop($accesspress_ray_settings['contact_address']);
+			do_action( 'accesspress_ray_social_links' ); 
+		?>
+		</div>
+		</div>
+
+		<?php } ?>
+		
 </section>
 <?php } ?>

@@ -64,7 +64,7 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 						}else{
 							echo bloginfo('name');
 						} ?>
-					</a>. <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'accesspress_ray' ) ); ?>"><?php printf( __( 'Powered by %s', 'accesspress_ray' ), 'WordPress' ); ?></a>
+					</a>. <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>"><?php printf( __( 'Powered by %s', 'accesspress_ray' ), 'WordPress' ); ?></a>
 					<span class="sep"> | </span>
 					<?php _e( 'Theme:', 'accesspress_ray' ) ?> <a href="<?php echo esc_url('http://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Ray</a>
 				</div><!-- .copyright -->

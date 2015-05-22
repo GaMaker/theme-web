@@ -94,8 +94,7 @@ $accesspress_ray_options = array(
     'featured_bar' => true,
     'call_to_action_post_content' => true,
 
-    'longitude' => '',
-    'latitude' => '',
+    'google_map' => '',
 
     'read_more_text' => __('Read More','accesspress_ray'),
     'hide_blogmore' => false,
@@ -227,11 +226,7 @@ function accesspress_ray_theme_options_page() {
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false; // This checks whether the form has just been submitted. ?>
 
-	<div class="wrap" id="optionsframework-wrap">
-
-	<?php 	if ( false !== $_REQUEST['settings-updated'] ) : ?>
-	<div class="updated fade"><p><strong><?php _e( 'Options saved' , 'accesspress_ray' ); ?></strong></p></div>
-	<?php endif; // If the form has just been submitted, this shows the notification ?>
+	<div class="wrap clearfix" id="optionsframework-wrap">
 
 	<?php // Shows all the tabs of the theme options ?>
 	<div class="nav-tab-wrapper">
@@ -248,18 +243,15 @@ function accesspress_ray_theme_options_page() {
 	
 	<div class="update-banner">
 		<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-top.jpg">
-		<div class="button-link">
-			<a href="<?php echo esc_url('https://accesspressthemes.com/accesspress-ray-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
-			<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-ray-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
-		</div>
-
-		<div class="any-question">
-			<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress_ray' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
-		</div>
 	</div>
 	</div>
 
 	<div id="optionsframework-metabox" class="metabox-holder">
+    
+    <?php 	if ( false !== $_REQUEST['settings-updated'] ) : ?>
+	<div class="updated fade"><p><strong><?php _e( 'Options saved' , 'accesspress_ray' ); ?></strong></p></div>
+	<?php endif; // If the form has just been submitted, this shows the notification ?>
+    
 		<div id="optionsframework" class="postbox">
 			<form id="form_options" method="post" action="options.php">
 
@@ -394,6 +386,43 @@ function accesspress_ray_theme_options_page() {
 				<table class="form-table">
 					<tr class="setting-title">
 					<td colspan="2">
+					<h4><?php _e('Call To Action', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="call_to_action_post"><?php _e('Call To Action Post','accesspress_ray'); ?></label></th>
+					<td>
+					<select id="call_to_action_post" name="accesspress_ray_options[call_to_action_post]">
+					<?php
+					foreach ( $accesspress_ray_postlist as $single_post ) :
+						$label = esc_attr($single_post['label']); ?>
+						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['call_to_action_post'] ); ?>><?php echo $label; ?></option>
+					<?php endforeach;
+					?>
+					</select>
+					</td>
+					</tr>
+
+					<tr>
+						<th><label for="full_content"><?php _e('Show Full Content?','accesspress_ray'); ?></th>
+						<td>
+							<input type="checkbox" id="full_content" name="accesspress_ray_options[call_to_action_post_content]" value="1" <?php checked( true, $settings['call_to_action_post_content'] ); ?> />
+							<label for="full_content"><?php _e('Check to enable','accesspress_ray'); ?></label><br />
+						</td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action_post_char"><?php _e('Call To Action Post Excerpt Character','accesspress_ray'); ?></label></th>
+						<td><input id="call_to_action_post_char" type="text" name="accesspress_ray_options[call_to_action_post_char]" value="<?php if (isset($settings['call_to_action_post_char'])){ echo esc_attr($settings['call_to_action_post_char']); } ?>"> <?php _e('Characters','accesspress_ray'); ?></td>
+					</tr>
+
+					<tr>
+						<th><label for="call_to_action_post_readmore"><?php _e('Read More Text','accesspress_ray'); ?></label></th>
+						<td><input class="medium" id="call_to_action_post_readmore" type="text" name="accesspress_ray_options[call_to_action_post_readmore]" value="<?php if (isset($settings['call_to_action_post_readmore'])){ echo esc_attr($settings['call_to_action_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspress_ray'); ?></em></td>
+					</tr>
+
+					<tr class="setting-title">
+					<td colspan="2">
 					<h4><?php _e('Featured Posts', 'accesspress_ray'); ?></h4>
 					</td>
 					</tr>
@@ -485,57 +514,6 @@ function accesspress_ray_theme_options_page() {
 						<td><input id="featured_post_readmore" type="text" name="accesspress_ray_options[featured_post_readmore]" value="<?php if ( isset($settings['featured_post_readmore'])){echo esc_attr($settings['featured_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspress_ray'); ?></em></td>
 					</tr>
 
-					<tr class="setting-title">
-					<td colspan="2">
-					<h4><?php _e('Call To Action', 'accesspress_ray'); ?></h4>
-					</td>
-					</tr>
-
-					<tr><th scope="row"><label for="call_to_action_post"><?php _e('Call To Action Post','accesspress_ray'); ?></label></th>
-					<td>
-					<select id="call_to_action_post" name="accesspress_ray_options[call_to_action_post]">
-					<?php
-					foreach ( $accesspress_ray_postlist as $single_post ) :
-						$label = esc_attr($single_post['label']); ?>
-						<option value="<?php echo esc_attr($single_post['value']) ?>" <?php selected( $single_post['value'], $settings['call_to_action_post'] ); ?>><?php echo $label; ?></option>
-					<?php endforeach;
-					?>
-					</select>
-					</td>
-					</tr>
-
-					<tr>
-						<th><label for="full_content"><?php _e('Show Full Content?','accesspress_ray'); ?></th>
-						<td>
-							<input type="checkbox" id="full_content" name="accesspress_ray_options[call_to_action_post_content]" value="1" <?php checked( true, $settings['call_to_action_post_content'] ); ?> />
-							<label for="full_content"><?php _e('Check to enable','accesspress_ray'); ?></label><br />
-						</td>
-					</tr>
-
-					<tr>
-						<th><label for="call_to_action_post_char"><?php _e('Call To Action Post Excerpt Character','accesspress_ray'); ?></label></th>
-						<td><input id="call_to_action_post_char" type="text" name="accesspress_ray_options[call_to_action_post_char]" value="<?php if (isset($settings['call_to_action_post_char'])){ echo esc_attr($settings['call_to_action_post_char']); } ?>"> <?php _e('Characters','accesspress_ray'); ?></td>
-					</tr>
-
-					<tr>
-						<th><label for="call_to_action_post_readmore"><?php _e('Read More Text','accesspress_ray'); ?></label></th>
-						<td><input class="medium" id="call_to_action_post_readmore" type="text" name="accesspress_ray_options[call_to_action_post_readmore]" value="<?php if (isset($settings['call_to_action_post_readmore'])){ echo esc_attr($settings['call_to_action_post_readmore']); } ?>"><br /><em class="f13"><?php _e('Leave blank if you don\'t want to show read more','accesspress_ray'); ?></em></td>
-					</tr>
-
-					<tr class="setting-title">
-					<td colspan="2">
-					<h4><?php _e('Featured Widgets', 'accesspress_ray'); ?></h4>
-					</td>
-					</tr>
-
-                    <tr>
-						<th><label for="featured_bar"><?php _e('Disable Featured Widget Bar','accesspress_ray'); ?></th>
-						<td>
-							<input type="checkbox" id="featured_bar" name="accesspress_ray_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
-							<label for="featured_bar"><?php _e('Check to disable','accesspress_ray'); ?></label><br />
-						</td>
-					</tr>
-
 					<tr>
 					<td colspan="2">
 						<em class="f13"><?php echo sprintf(__('To set up Widgets, Go to <a href="%s" target="_blank">widget page</a>', 'accesspress_ray'),esc_url(admin_url('widgets.php'))); ?></em>
@@ -544,7 +522,7 @@ function accesspress_ray_theme_options_page() {
 
 					<tr class="setting-title">
 					<td colspan="2">
-					<h4><?php _e('Blog Slider', 'accesspress_ray'); ?></h4>
+					<h4><?php _e('Blog Slider - Can be any other category apart from blog', 'accesspress_ray'); ?></h4>
 					</td>
 					</tr>
 
@@ -585,6 +563,20 @@ function accesspress_ray_theme_options_page() {
 
 					<tr class="setting-title">
 					<td colspan="2">
+					<h4><?php _e('Featured Widgets', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
+
+                    <tr>
+						<th><label for="featured_bar"><?php _e('Disable Featured Widget Bar','accesspress_ray'); ?></th>
+						<td>
+							<input type="checkbox" id="featured_bar" name="accesspress_ray_options[featured_bar]" value="1" <?php checked( true, $settings['featured_bar'] ); ?> />
+							<label for="featured_bar"><?php _e('Check to disable','accesspress_ray'); ?></label><br />
+						</td>
+					</tr>
+
+					<tr class="setting-title">
+					<td colspan="2">
 					<h4><?php _e('Testimonail Slider', 'accesspress_ray'); ?></h4>
 					</td>
 					</tr>
@@ -620,6 +612,26 @@ function accesspress_ray_theme_options_page() {
 					<tr>
 						<th><label for="blog_title"><?php _e('Title','accesspress_ray'); ?></label></th>
 						<td><input id="blog_title" type="text" name="accesspress_ray_options[blog_title]" value="<?php if (isset($settings['blog_title'])){ echo esc_attr($settings['blog_title']); } ?>"></td>
+					</tr>
+
+					<tr class="setting-title">
+					<td colspan="2">
+					<h4><?php _e('Google Map', 'accesspress_ray'); ?></h4>
+					</td>
+					</tr>
+
+					<tr><th scope="row"><label for="google_map"><?php _e('Google Map Iframe','accesspress_ray'); ?></label></th>
+						<td>
+						<textarea id="google_map" name="accesspress_ray_options[google_map]" rows="6" cols="60"><?php echo $settings['google_map']; ?></textarea>
+						<p class="f13"><em><?php _e('Enter the Google Map Iframe','accesspress_ray'); ?><em></p>
+						</td>
+					</tr>
+
+					<tr><th scope="row"><label for="contact_address"><?php _e('Contact Address','accesspress_ray'); ?></label></th>
+						<td>
+						<textarea id="contact_address" name="accesspress_ray_options[contact_address]" rows="6" cols="60"><?php echo $settings['contact_address']; ?></textarea>
+						<p class="f13"><em><?php _e('Enter the Contact Address Detail','accesspress_ray'); ?><em></p>
+						</td>
 					</tr>
                 </table>
             </div>
@@ -961,7 +973,19 @@ function accesspress_ray_theme_options_page() {
 		</div><!-- #optionsframework -->
 
 	</div><!-- #optionsframework-metabox -->
+    
+    <div class="upgrade-ray">
+    <h3>Upgrade to Ray Pro</h3>
+    <div class="button-link">
+		<a href="<?php echo esc_url('https://accesspressthemes.com/accesspress-ray-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/demo-btn.png"></a>
+		<a href="<?php echo esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-ray-pro/'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-btn.png"></a>
+	</div>
 
+	<div class="any-question">
+		<?php echo sprintf(__( 'Any question!! Click <a href="%s" target="_blank">here</a> for Live Chat' , 'accesspress_ray' ), esc_url('https://accesspressthemes.com/contact/')); ?>.
+    </div>
+    <img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/upgrade-ray-pro-feature.jpg"/>
+    </div>
 	</div>
 	<?php
 }
@@ -993,8 +1017,6 @@ function accesspress_ray_validate_options( $input ) {
     $input['call_to_action_post_readmore'] = sanitize_text_field( $input['call_to_action_post_readmore'] );
     $input['custom_css'] = wp_filter_nohtml_kses( $input['custom_css'] );
     $input['custom_code'] = wp_kses_stripslashes( $input[ 'custom_code' ] );
-    $input['longitude'] = sanitize_text_field( $input['longitude'] );
-    $input['latitude'] = sanitize_text_field( $input['latitude'] );
     $input['read_more_text'] = sanitize_text_field( $input['read_more_text'] );
     $input['blog_title'] = sanitize_text_field( $input['blog_title'] );
 
@@ -1197,6 +1219,10 @@ function accesspress_ray_validate_options( $input ) {
     
     if( isset( $input[ 'gallery_code' ] ) ) {
 	   $input[ 'gallery_code' ] = wp_kses_post( $input[ 'gallery_code' ] );
+	}
+
+	if( isset( $input[ 'google_map' ] ) ) {
+	   $input[ 'google_map' ] = wp_kses_stripslashes( $input[ 'google_map' ] );
 	}
 	return $input;
 }

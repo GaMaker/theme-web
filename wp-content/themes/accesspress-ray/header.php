@@ -50,7 +50,7 @@ $accesspress_ray_settings = get_option( 'accesspress_ray_options', $accesspress_
 						wp_nav_menu( array( 
 						'theme_location' => 'primary' , 
 						'container_class' => 'menu',
-						'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
+						'items_wrap'      => '<ul class="clearfix" id="%1$s">%3$s</ul>',
 						) ); 
 
 						if($accesspress_ray_settings['show_search'] == 1){ ?>
