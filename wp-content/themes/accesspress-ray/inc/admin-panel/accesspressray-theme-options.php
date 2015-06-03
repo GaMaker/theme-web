@@ -966,7 +966,7 @@ function accesspress_ray_theme_options_page() {
 			</div>
 
 			<div id="optionsframework-submit">
-			<input type="submit" class="button-primary" value="<?php esc_attr_e('Save Options','accesspress_ray'); ?>" />
+			<input type="submit" class="button-primary" value="<?php _e('Save Options','accesspress_ray'); ?>" />
 			</div>
 
 			</form>

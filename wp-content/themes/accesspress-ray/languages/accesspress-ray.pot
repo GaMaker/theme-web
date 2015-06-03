@@ -4,30 +4,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Ray\n"
 "POT-Creation-Date: 2014-11-24 20:23+0545\n"
-"POT-Revision-Date: Fri May 08 2015 12:21:52 GMT+0545 (Nepal Standard Time)\n"
+"PO-Revision-Date: 2014-11-24 20:23+0545\n"
 "Last-Translator: \n"
 "Language-Team: AccessPress Themes <info@accesspresstheme.com>\n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Loco - https://localise.biz/\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: .."
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: ../404.php:18
-msgid "404"
 msgstr ""
 
 #: ../404.php:19
@@ -53,19 +45,9 @@ msgstr ""
 msgid "Month: %s"
 msgstr ""
 
-#: ../archive.php:37
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
 #: ../archive.php:40
 #, php-format
 msgid "Year: %s"
-msgstr ""
-
-#: ../archive.php:40
-msgctxt "yearly archives date format"
-msgid "Y"
 msgstr ""
 
 #: ../archive.php:43
@@ -108,13 +90,6 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: ../comments.php:28
-#, php-format
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
-
 #: ../comments.php:35 ../comments.php:52
 msgid "Comment navigation"
 msgstr ""
@@ -137,7 +112,8 @@ msgstr ""
 
 #: ../content-none.php:19
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: ../content-none.php:23
@@ -152,8 +128,8 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: ../content-page.php:18 ../content-single.php:28 ../content-summary.php:88 ..
-#: /content.php:88
+#: ../content-page.php:18 ../content-single.php:28 ../content-summary.php:88
+#: ../content.php:88
 msgid "Pages:"
 msgstr ""
 
@@ -161,16 +137,17 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../content-single.php:38 ../content-single.php:41 ../content-summary.php:100 ..
-#: /content-summary.php:110 ../content.php:100 ../content.php:110
+#: ../content-single.php:38 ../content-single.php:41
+#: ../content-summary.php:100 ../content-summary.php:110 ../content.php:100
+#: ../content.php:110
 msgid ", "
 msgstr ""
 
 #: ../content-single.php:46
 #, php-format
 msgid ""
-"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
+"This entry was tagged %2$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
 msgstr ""
 
 #: ../content-single.php:48
@@ -188,8 +165,12 @@ msgstr ""
 #: ../content-single.php:56
 #, php-format
 msgid ""
-"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" "
-"rel=\"bookmark\">permalink</a>."
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" rel=\"bookmark"
+"\">permalink</a>."
+msgstr ""
+
+#: ../content-summary.php:85 ../content.php:85
+msgid "More"
 msgstr ""
 
 #: ../content-summary.php:104 ../content.php:104
@@ -202,12 +183,12 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: ../content.php:85
-msgid "More"
-msgstr ""
-
 #: ../footer.php:60
 msgid "Copyright"
+msgstr ""
+
+#: ../footer.php:67
+msgid "http://wordpress.org/"
 msgstr ""
 
 #: ../footer.php:67
@@ -216,14 +197,14 @@ msgid "Powered by %s"
 msgstr ""
 
 #: ../footer.php:69
-msgid "Theme:"
+msgid "Free WordPress Theme:"
 msgstr ""
 
-#: ../functions.php:59
+#: ../functions.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:60
+#: ../functions.php:59
 msgid "Secondary Menu"
 msgstr ""
 
@@ -231,68 +212,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../index-one.php:52
-msgid "Welcome to AccessPress Ray"
-msgstr ""
-
-#: ../index-one.php:54
-msgid ""
-"Free Responsive, Multipurpose Business and Corporate Theme perfect for any "
-"business."
-msgstr ""
-
-#: ../index-one.php:55 ../index-one.php:275 ../index-one.php:376 ..
-#: /inc/accesspressray-custom-functions.php:478 ../inc/accesspressray-custom-
-#: functions.php:492 ../inc/admin-panel/accesspressray-theme-options.php:27 ..
-#: /inc/admin-panel/accesspressray-theme-options.php:36 ../inc/admin-
-#: panel/accesspressray-theme-options.php:99
-msgid "Read More"
-msgstr ""
-
-#: ../index-one.php:273
-msgid "Featured Post "
-msgstr ""
-
-#: ../index-one.php:274 ../index-one.php:373
-msgid ""
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus, purus "
-"id ultrices tristique, velit ante accumsan metus, non porttitor tortor elit "
-"pellentesque felis..."
-msgstr ""
-
-#: ../index-one.php:341 ../index-one.php:381
-msgid "view all"
-msgstr ""
-
-#: ../index-one.php:369
-msgid "Blog Post "
-msgstr ""
-
-#: ../index-one.php:461
-msgid "What our Clients Say"
-msgstr ""
-
-#: ../index-one.php:470
-msgid ""
-"Thanks for delivering top quality services to your clients. It just takes a "
-"minute to get an answer from you when in difficulties."
-msgstr ""
-
-#: ../index-one.php:472
-msgid "Yanetxys Torreblanca"
-msgstr ""
-
-#: ../index-one.php:481
-msgid ""
-"Thank you very much the support team AccessPress Ray for service, are really "
-"wonderful in their care and in the resolution of the problem."
-msgstr ""
-
-#: ../index-one.php:483
-msgid "David Soriano"
-msgstr ""
-
-#: ../index-one.php:540
+#: ../index-one.php:495
 msgid "Contact Us"
 msgstr ""
 
@@ -327,269 +247,59 @@ msgid "Display items in the Right Sidebar of the inner pages"
 msgstr ""
 
 #: ../inc/accesspressray-custom-functions.php:119
-msgid "Shop Sidebar"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:121
-msgid "Display items in the Right Sidebar of the inner pages for Woocommerce"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:129
 msgid "Featured Left Widget"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:131
+#: ../inc/accesspressray-custom-functions.php:121
 msgid "Display items in the left of Featured Bar"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:139
+#: ../inc/accesspressray-custom-functions.php:129
 msgid "Featured Middle Widget"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:141
+#: ../inc/accesspressray-custom-functions.php:131
 msgid "Display items in the middle of Featured Bar"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:149
+#: ../inc/accesspressray-custom-functions.php:139
 msgid "Featured Right Widget"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:151
+#: ../inc/accesspressray-custom-functions.php:141
 msgid "Display items in the right of Featured Bar"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:159
+#: ../inc/accesspressray-custom-functions.php:149
 msgid "Footer One"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:161
+#: ../inc/accesspressray-custom-functions.php:151
 msgid "Display items in First Footer Area"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:169
+#: ../inc/accesspressray-custom-functions.php:159
 msgid "Footer Two"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:171
+#: ../inc/accesspressray-custom-functions.php:161
 msgid "Display items in Second Footer Area"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:179
+#: ../inc/accesspressray-custom-functions.php:169
 msgid "Footer Three"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:181
+#: ../inc/accesspressray-custom-functions.php:171
 msgid "Display items in Third Footer Area"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:189
+#: ../inc/accesspressray-custom-functions.php:179
 msgid "Footer Four"
 msgstr ""
 
-#: ../inc/accesspressray-custom-functions.php:191
+#: ../inc/accesspressray-custom-functions.php:181
 msgid "Display items in Fourth Footer Area"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:475
-msgid "AccessPress Ray"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:476
-msgid ""
-"Responsive, multi-purpose, business wordpress theme, perfect for any "
-"business on any device."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:489
-msgid "Easy Customization"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:490
-msgid ""
-"A theme with powerful theme options for customization. Style your wordpress "
-"and see changes live!"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:588
-#, php-format
-msgid "Go to <a href=\"%s\">Theme Options Panel</a> to set up the website."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:637 ../inc/class-tgm-plugin-
-#: activation.php:303
-msgid "Install Required Plugins"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:638 ../inc/class-tgm-plugin-
-#: activation.php:304
-msgid "Install Plugins"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:639 ../inc/class-tgm-plugin-
-#: activation.php:305
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:640 ../inc/class-tgm-plugin-
-#: activation.php:306
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:641 ../inc/class-tgm-plugin-
-#: activation.php:307
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:646 ../inc/class-tgm-plugin-
-#: activation.php:312
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:651 ../inc/class-tgm-plugin-
-#: activation.php:317
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:656 ../inc/class-tgm-plugin-
-#: activation.php:322
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:661 ../inc/class-tgm-plugin-
-#: activation.php:327
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:666 ../inc/class-tgm-plugin-
-#: activation.php:332
-#, php-format
-msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:671 ../inc/class-tgm-plugin-
-#: activation.php:337
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:676 ../inc/class-tgm-plugin-
-#: activation.php:342
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:681 ../inc/class-tgm-plugin-
-#: activation.php:347
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:686 ../inc/class-tgm-plugin-
-#: activation.php:352
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:691 ../inc/class-tgm-plugin-
-#: activation.php:357
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:696 ../inc/class-tgm-plugin-
-#: activation.php:362
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:701 ../inc/class-tgm-plugin-
-#: activation.php:368
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:702 ../inc/class-tgm-plugin-
-#: activation.php:370 ../inc/class-tgm-plugin-activation.php:2989
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:703 ../inc/class-tgm-plugin-
-#: activation.php:371 ../inc/class-tgm-plugin-activation.php:2810
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspressray-custom-functions.php:704 ../inc/class-tgm-plugin-
-#: activation.php:372
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:705 ../inc/class-tgm-plugin-
-#: activation.php:373
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:706 ../inc/class-tgm-plugin-
-#: activation.php:374
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: ../inc/accesspressray-custom-functions.php:707 ../inc/class-tgm-plugin-
-#: activation.php:376
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#. $id
-#. $id
-#: ../inc/accesspressray-custom-metabox.php:16 ../inc/accesspressray-custom-
-#: metabox.php:24
-msgid "Sidebar Layout"
 msgstr ""
 
 #: ../inc/accesspressray-custom-metabox.php:35
@@ -608,15 +318,6 @@ msgstr ""
 msgid "No sidebar"
 msgstr ""
 
-#: ../inc/accesspressray-custom-metabox.php:65
-msgid "Choose Sidebar Template"
-msgstr ""
-
-#: ../inc/accesspressray-custom-metabox.php:86
-#, php-format
-msgid "You can set up the sidebar content <a href=\"%s\">here</a>"
-msgstr ""
-
 #: ../inc/accesspressray-template-tags.php:23
 msgid "Posts navigation"
 msgstr ""
@@ -633,16 +334,6 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/accesspressray-template-tags.php:59
-msgctxt "Previous post link"
-msgid "<span class=\"meta-nav\">&larr;</span> %title"
-msgstr ""
-
-#: ../inc/accesspressray-template-tags.php:60
-msgctxt "Next post link"
-msgid "%title <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
 #: ../inc/accesspressray-template-tags.php:85
 #, php-format
 msgid ""
@@ -650,831 +341,391 @@ msgid ""
 "%2$s</span>"
 msgstr ""
 
-#: ../inc/class-tgm-plugin-activation.php:369
-msgid "Return to the dashboard"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:375
-msgid "Dismiss this notice"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:494
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:495
-msgid "Update Required"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:610
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:808 ../inc/class-tgm-plugin-activation.
-#: php:3404
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:925
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:925 ../inc/class-tgm-plugin-activation.
-#: php:929
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:929
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:1114 ../inc/class-tgm-plugin-activation.
-#: php:2806
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2177
-msgid "Required"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2180
-msgid "Recommended"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2197
-msgid "WordPress Repository"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2201
-msgid "External Source"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2205
-msgid "Pre-Packaged"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2224
-msgid "Not Installed"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2228
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2230
-msgid "Active"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2236
-msgid "Required Update not Available"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2239
-msgid "Requires Update"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2242
-msgid "Update recommended"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2250
-#, php-format
-msgctxt "%1$s = install status, %2$s = update status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2299
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/class-tgm-plugin-activation.php:2302
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/class-tgm-plugin-activation.php:2305
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/class-tgm-plugin-activation.php:2308
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/class-tgm-plugin-activation.php:2394
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2402
-msgid "Installed version:"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2410
-msgid "Minimum required version:"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2422
-msgid "Available version:"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2446
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2462
-msgid "Plugin"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2463
-msgid "Source"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2464
-msgid "Type"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2468
-msgid "Version"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2472
-msgid "Status"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2496
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Install %2$s"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2502
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Update %2$s"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2508
-#, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
-msgid "Activate %2$s"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2579
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2599
-msgid "Install"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2605
-msgid "Update"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2608
-msgid "Activate"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2667
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2669
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2792
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:2988
-msgid "Plugin activation failed."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3326
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3330
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3331
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3335
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3336
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3336 ../inc/class-tgm-plugin-activation.
-#: php:3343
-msgid "Show Details"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3336 ../inc/class-tgm-plugin-activation.
-#: php:3343
-msgid "Hide Details"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3337
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3338
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3342
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3343
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3344
-msgid "All installations have been completed."
-msgstr ""
-
-#: ../inc/class-tgm-plugin-activation.php:3345
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:23 ../inc/admin-
-#: panel/accesspressray-theme-options.php:437
-msgid "Featured Text"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:25 ../inc/admin-
-#: panel/accesspressray-theme-options.php:329
-msgid "Left"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:31 ../inc/admin-
-#: panel/accesspressray-theme-options.php:430
-msgid "Featured Title"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:91
-msgid "View All"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:102
-msgid "Latest Posts"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:115 ../inc/admin-
-#: panel/accesspressray-theme-options.php:115 ../inc/admin-panel/accesspressray-
-#: theme-options.php:235
+#: ../inc/admin-panel/accesspressray-theme-options.php:110
 msgid "Theme Options"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:122 ../inc/admin-
-#: panel/accesspressray-theme-options.php:137
-msgid "--choose--"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:158 ../inc/admin-
-#: panel/accesspressray-theme-options.php:213
-msgid "show"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:162 ../inc/admin-
-#: panel/accesspressray-theme-options.php:217
-msgid "hide"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:169 ../inc/admin-
-#: panel/accesspressray-theme-options.php:180 ../inc/admin-panel/accesspressray-
-#: theme-options.php:191
-msgid "yes"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:173 ../inc/admin-
-#: panel/accesspressray-theme-options.php:184 ../inc/admin-panel/accesspressray-
-#: theme-options.php:195
-msgid "no"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:202
-msgid "fade"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:206
-msgid "slide"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:237 ../inc/admin-
-#: panel/accesspressray-theme-options.php:267
-msgid "Basic Settings"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:238
-msgid "Home Page Set Up"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:239
-msgid "Slider Settings"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:240
-msgid "Social Links"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:241 ../inc/admin-
-#: panel/accesspressray-theme-options.php:924
-msgid "Tools"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:242
-msgid "About AccessPress Ray"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:252
+#: ../inc/admin-panel/accesspressray-theme-options.php:227
 msgid "Options saved"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:270
+#: ../inc/admin-panel/accesspressray-theme-options.php:236
+#: ../inc/admin-panel/accesspressray-theme-options.php:257
+msgid "Basic Settings"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:237
+msgid "Home Page"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:238
+msgid "Slider Settings"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:239
+msgid "Social Links"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:240
+#: ../inc/admin-panel/accesspressray-theme-options.php:894
+msgid "Tools"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:241
+msgid "About AccessPress Ray"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:260
 msgid "Disable Responsive Design?"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:273 ../inc/admin-
-#: panel/accesspressray-theme-options.php:560 ../inc/admin-panel/accesspressray-
-#: theme-options.php:574 ../inc/admin-panel/accesspressray-theme-options.php:838
+#: ../inc/admin-panel/accesspressray-theme-options.php:263
+#: ../inc/admin-panel/accesspressray-theme-options.php:556
+#: ../inc/admin-panel/accesspressray-theme-options.php:808
 msgid "Check to disable"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:277
+#: ../inc/admin-panel/accesspressray-theme-options.php:267
 msgid "Web Page Layout"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:279
-msgid "Fullwidth"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:279
-msgid "Boxed"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:290
+#: ../inc/admin-panel/accesspressray-theme-options.php:280
 msgid "Show Search in Header?"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:293 ../inc/admin-
-#: panel/accesspressray-theme-options.php:410 ../inc/admin-panel/accesspressray-
-#: theme-options.php:447 ../inc/admin-panel/accesspressray-theme-options.php:552 .
-#: ./inc/admin-panel/accesspressray-theme-options.php:608
+#: ../inc/admin-panel/accesspressray-theme-options.php:283
+#: ../inc/admin-panel/accesspressray-theme-options.php:420
+#: ../inc/admin-panel/accesspressray-theme-options.php:447
+#: ../inc/admin-panel/accesspressray-theme-options.php:480
 msgid "Check to enable"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:298
+#: ../inc/admin-panel/accesspressray-theme-options.php:288
 msgid "Upload Favicon"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:302 ../inc/admin-
-#: panel/accesspressray-theme-options.php:323
+#: ../inc/admin-panel/accesspressray-theme-options.php:292
+#: ../inc/admin-panel/accesspressray-theme-options.php:313
 msgid "Upload"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:303
+#: ../inc/admin-panel/accesspressray-theme-options.php:293
 msgid "Upload favicon(.png) with size of 16px X 16px"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:308 ../inc/admin-
-#: panel/accesspressray-theme-options.php:313
+#: ../inc/admin-panel/accesspressray-theme-options.php:298
+#: ../inc/admin-panel/accesspressray-theme-options.php:303
 msgid "Remove"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:321
+#: ../inc/admin-panel/accesspressray-theme-options.php:311
 msgid "Upload Logo"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:327
+#: ../inc/admin-panel/accesspressray-theme-options.php:317
 msgid "Logo Alignment"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:329
-msgid "Center"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:343
-msgid "Select the category to display as Portfolio/Products"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:359
-#, php-format
-msgid ""
-"You can show these categories in the menu by configuring <a target=\"_blank\" "
-"href=\"%s\">Menus</a> Page."
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:366 ../inc/admin-
-#: panel/accesspressray-theme-options.php:420 ../inc/admin-panel/accesspressray-
-#: theme-options.php:513
-msgid "Read More Text"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:370
-msgid "Read More text for Archive page"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:375
-msgid "Footer Copyright Text"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:385
-msgid "Home Page Settings"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:389
-msgid "Call To Action"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:393
-msgid "Call To Action Post"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:407
-msgid "Show Full Content?"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:415
-msgid "Call To Action Post Excerpt Character"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:416
-msgid "Characters"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:421 ../inc/admin-
-#: panel/accesspressray-theme-options.php:514
-msgid "Leave blank if you don't want to show read more"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:426
-msgid "Featured Posts"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:440
-msgid "Html content allowed"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:444
-msgid "Show Font Awesome icon in Featured Post?"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:448
-#, php-format
-msgid ""
-"(If enabled the image will be replaced by Font Awesome Icon. For lists of "
-"icons click <a href=\"%s\" target=\"_blank\"> here"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:452
-msgid "Featured Post 1"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:463 ../inc/admin-
-#: panel/accesspressray-theme-options.php:478 ../inc/admin-panel/accesspressray-
-#: theme-options.php:493 ../inc/admin-panel/accesspressray-theme-options.php:508
-msgid "Font Awesome icon name"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:463 ../inc/admin-
-#: panel/accesspressray-theme-options.php:478 ../inc/admin-panel/accesspressray-
-#: theme-options.php:493 ../inc/admin-panel/accesspressray-theme-options.php:508
-msgid "Example"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:467
-msgid "Featured Post 2"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:482
-msgid "Featured Post 3"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:497
-msgid "Featured Post 4"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:519
-#, php-format
-msgid "To set up Widgets, Go to <a href=\"%s\" target=\"_blank\">widget page</a>"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:525
-msgid "Blog Slider - Can be any other category apart from blog"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:529
-msgid "Select the category to display as Blog"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:544
-msgid "No of Posts to display in Blog slider"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:549
-msgid "Show Blog Posted Date?"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:557
-msgid "Disable Blog view all button?"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:566
-msgid "Featured Widgets"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:571
-msgid "Disable Featured Widget Bar"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:580
-msgid "Testimonail Slider"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:584
+#: ../inc/admin-panel/accesspressray-theme-options.php:331
 msgid "Select the category to display as Testimonials"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:600
-msgid "Blog Post"
+#: ../inc/admin-panel/accesspressray-theme-options.php:345
+msgid "Select the category to display as Blog"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:605
-msgid "Show Blog Posts?"
+#: ../inc/admin-panel/accesspressray-theme-options.php:359
+msgid "Select the category to display as Portfolio/Products"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:613
-msgid "Title"
+#: ../inc/admin-panel/accesspressray-theme-options.php:375
+msgid "You can show these categories in the menu by configuring"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:619
-msgid "Google Map"
+#: ../inc/admin-panel/accesspressray-theme-options.php:375
+msgid "Page."
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:623
-msgid "Google Map Iframe"
+#: ../inc/admin-panel/accesspressray-theme-options.php:382
+msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:626
-msgid "Enter the Google Map Iframe"
+#: ../inc/admin-panel/accesspressray-theme-options.php:392
+msgid "Home Page Settings"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:630
-msgid "Contact Address"
+#: ../inc/admin-panel/accesspressray-theme-options.php:394
+msgid "Home Page Layout"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:633
-msgid "Enter the Contact Address Detail"
+#: ../inc/admin-panel/accesspressray-theme-options.php:412
+msgid "No of Posts to display in Blog slider"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:642
-msgid "Home Page Slider Settings"
+#: ../inc/admin-panel/accesspressray-theme-options.php:417
+msgid "Show Blog Posted Date?"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:647
-msgid "Show"
+#: ../inc/admin-panel/accesspressray-theme-options.php:425
+msgid "To replace the Event section in homepage, Go to"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:656
-msgid "Single Posts as a Slider"
+#: ../inc/admin-panel/accesspressray-theme-options.php:425
+msgid "widget"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:660
-msgid "Category Posts as a Slider"
+#: ../inc/admin-panel/accesspressray-theme-options.php:425
+msgid "and drag widget item into the Event Sidebar Widget area."
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:670
-msgid "Select the post that you want to display as a Slider"
+#: ../inc/admin-panel/accesspressray-theme-options.php:430
+msgid "Call To Action Post"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:675
-msgid "Silder 1"
+#: ../inc/admin-panel/accesspressray-theme-options.php:444
+msgid "Show Full Content?"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:688
-msgid "Silder 2"
+#: ../inc/admin-panel/accesspressray-theme-options.php:452
+msgid "Call To Action Post Excerpt Character"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:701
-msgid "Silder 3"
+#: ../inc/admin-panel/accesspressray-theme-options.php:453
+msgid "Characters"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:715
-msgid "Silder 4"
+#: ../inc/admin-panel/accesspressray-theme-options.php:457
+#: ../inc/admin-panel/accesspressray-theme-options.php:546
+msgid "Read More Text"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:731
-msgid "Select the Category"
+#: ../inc/admin-panel/accesspressray-theme-options.php:458
+#: ../inc/admin-panel/accesspressray-theme-options.php:547
+msgid "Leave blank if you don't want to show read more"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:754
-msgid "Adjust the slider as per your need."
+#: ../inc/admin-panel/accesspressray-theme-options.php:463
+msgid "Featured Title"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:757
-msgid "Show Slider"
+#: ../inc/admin-panel/accesspressray-theme-options.php:470
+msgid "Featured Text"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:766
-msgid "Show Slider Pager (Navigation dots)"
+#: ../inc/admin-panel/accesspressray-theme-options.php:473
+msgid "Html content allowed"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:775
-msgid "Show Slider Controls (Arrows)"
+#: ../inc/admin-panel/accesspressray-theme-options.php:477
+msgid "Show Font Awesome icon in Featured Post?"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:784
-msgid "Slider Transition - fade/slide"
+#: ../inc/admin-panel/accesspressray-theme-options.php:481
+msgid ""
+"(If enabled the image will be replaced by Font Awesome Icon. For lists of "
+"icons click"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:793
-msgid "Slider auto Transition"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:802
-msgid "Slider Speed"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:808
-msgid "Slider Pause"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:814
-msgid "Show Slider Captions"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:828
-msgid "Social links - Put your social url"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:831
-msgid "Put your social url below.. Leave blank if you don't want to show it."
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:835
-msgid "Disable Social icons in Footer?"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:842
-msgid "Facebook"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:848
-msgid "Twitter"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:854
-msgid "Google plus"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:860
-msgid "Youtube"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:866
-msgid "Pinterest"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:872
-msgid "Linkedin"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:878
-msgid "Flickr"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:884
-msgid "Vimeo"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:890
-msgid "Stumbleupon"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:896
-msgid "Instagram"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:902
-msgid "Sound Cloud"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:908
-msgid "Skype"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:914
-msgid "RSS"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:926
-msgid "Custom CSS"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:929
-msgid "Put your custom CSS"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:937
-msgid "Know more about AccessPress Themes"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:941
-msgid "AccessPress Ray - is a FREE WordPress theme by"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:941
-msgid "- A WordPress Division of Access Keys."
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:942
-msgid "For demo, click"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:942 ../inc/admin-
-#: panel/accesspressray-theme-options.php:943
+#: ../inc/admin-panel/accesspressray-theme-options.php:481
+#: ../inc/admin-panel/accesspressray-theme-options.php:919
+#: ../inc/admin-panel/accesspressray-theme-options.php:920
 msgid "here"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:943
+#: ../inc/admin-panel/accesspressray-theme-options.php:485
+msgid "Featured Post 1"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:500
+msgid "Featured Post 2"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:515
+msgid "Featured Post 3"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:530
+msgid "Featured Post 4"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:553
+msgid "Disable Featured Widget Bar"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:562
+msgid "Google Map Iframe"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:565
+msgid ""
+"Enter the Iframe of the google map to show in contact us page.<br />Leave "
+"Blank if you don't want to show"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:569
+msgid "Contact Address"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:572
+msgid "Enter the Contact Address<br />Leave Blank if you don't want to show"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:581
+msgid "Call To action"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:587
+msgid "Text"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:594
+msgid "Read More Button Text"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:601
+msgid "Read More Button link"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:612
+msgid "Home Page Slider Settings"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:617
+msgid "Show"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:626
+msgid "Single Posts as a Slider"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:630
+msgid "Category Posts as a Slider"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:640
+msgid "Select the post that you want to display as a Slider"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:645
+msgid "Silder 1"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:658
+msgid "Silder 2"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:671
+msgid "Silder 3"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:685
+msgid "Silder 4"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:701
+msgid "Select the Category"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:724
+msgid "Adjust the slider as per your need."
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:727
+msgid "Show Slider"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:736
+msgid "Show Slider Pager (Navigation dots)"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:745
+msgid "Show Slider Controls (Arrows)"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:754
+msgid "Slider Transition - fade/slide"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:763
+msgid "Slider auto Transition"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:772
+msgid "Slider Speed"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:778
+msgid "Slider Pause"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:784
+msgid "Show Slider Captions"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:798
+msgid "Social links - Put your social url"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:801
+msgid "Put your social url below.. Leave blank if you don't want to show it."
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:805
+msgid "Disable Social icons in Footer?"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:896
+msgid "Custom CSS"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:903
+msgid "Custom Code (analytics)"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:914
+msgid "Know more about AccessPress Themes"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:918
+msgid "AccessPress Ray - is a FREE WordPress theme by"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:918
+msgid "- A WordPress Division of Access Keys."
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:919
 msgid "For documentation, click"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:947
+#: ../inc/admin-panel/accesspressray-theme-options.php:920
+msgid "For Video tutorials, click"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:924
 msgid "Other products by AccessPressThemes"
 msgstr ""
 
 #: ../inc/admin-panel/accesspressray-theme-options.php:948
-msgid "Our Themes - "
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:949
-msgid "Our Plugins - "
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:953
 msgid "Get in touch"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:956
-msgid "If you have any question/feedback regarding theme, please post in our forum"
+#: ../inc/admin-panel/accesspressray-theme-options.php:951
+msgid "If you have any question feedback, please get in touch:"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:957
-msgid "Forum:"
+#: ../inc/admin-panel/accesspressray-theme-options.php:952
+msgid "General enquiries:"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:959
-msgid "For Queries Regading Pro Theme"
+#: ../inc/admin-panel/accesspressray-theme-options.php:953
+msgid "Support:"
 msgstr ""
 
-#: ../inc/admin-panel/accesspressray-theme-options.php:969
+#: ../inc/admin-panel/accesspressray-theme-options.php:954
+msgid "Sales:"
+msgstr ""
+
+#: ../inc/admin-panel/accesspressray-theme-options.php:963
 msgid "Save Options"
-msgstr ""
-
-#: ../inc/admin-panel/accesspressray-theme-options.php:985
-#, php-format
-msgid "Any question!! Click <a href=\"%s\" target=\"_blank\">here</a> for Live Chat"
 msgstr ""

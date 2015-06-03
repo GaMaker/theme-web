@@ -83,7 +83,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspress_ray_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13"><?php sprintf(__('You can set up the sidebar content <a href="%s">here</a>', 'accesspress_ray'), esc_url(admin_url('/themes.php?page=theme_options'))); ?>; ?></em></td>
+    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a>', 'accesspress_ray'), esc_url(admin_url('/themes.php?page=theme_options'))); ?></em></td>
 </tr>
 </table>
 
