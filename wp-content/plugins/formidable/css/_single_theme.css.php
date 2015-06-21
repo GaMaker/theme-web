@@ -248,6 +248,7 @@ if ( ! isset($collapse_icon) ) {
 .<?php echo $style_class ?> .frm_inline_container label.frm_primary_label,
 .<?php echo $style_class ?> .frm_inline_container:not(.frm_dynamic_select_container) .frm_opt_container{
     display:inline<?php echo $important ?>;
+	margin-right:10px<?php echo $important ?>;
 }
 
 .<?php echo $style_class ?> .frm_pos_right{
@@ -891,6 +892,12 @@ if ( ! $submit_style ) { ?>
 		padding-right:0;
 		padding-left:0;
 		width:100%<?php echo $important ?>;
+	}
+
+
+	.<?php echo $style_class ?> .frm_repeat_inline,
+	.<?php echo $style_class ?> .frm_repeat_grid{
+		margin: 20px 0;
 	}
 
 	.<?php echo $style_class ?> .frm_form_field.frm_first_half.frm_right_container div.frm_description,
